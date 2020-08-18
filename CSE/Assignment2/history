@@ -1,0 +1,16 @@
+15
+ls
+ls ;ls
+ls ; ls 0a
+ls ; ls -a
+ls ~ ; ls ~
+clear
+ls
+tree &
+ls
+clear
+ls
+exit
+ls;clear
+ls
+ls
