@@ -53,6 +53,7 @@ int main(int argc, char *argv[]) {
     write(1,"\n",1);
     int inFile, outFile;
     inFile = open(argv[1], O_RDONLY);
+    remove(outFilePath);
     outFile = open(outFilePath, O_WRONLY|O_CREAT, S_IRUSR | S_IWUSR);
     long long int totalChars = lseek(inFile, 0, SEEK_END);
     long long int lastOffset = totalChars;
