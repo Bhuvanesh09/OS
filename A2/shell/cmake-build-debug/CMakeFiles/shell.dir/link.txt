@@ -1,0 +1,1 @@
+/usr/bin/cc -g   CMakeFiles/shell.dir/main.c.o CMakeFiles/shell.dir/utils/hud.c.o CMakeFiles/shell.dir/utils/shellStateDef.c.o CMakeFiles/shell.dir/utils/inputHandler.c.o  -o shell -lm 

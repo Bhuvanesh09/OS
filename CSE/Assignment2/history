@@ -1,11 +1,4 @@
-15
-ls
-ls ;ls
-ls ; ls 0a
-ls ; ls -a
-ls ~ ; ls ~
-clear
-ls
+20
 tree &
 ls
 clear
@@ -14,3 +7,15 @@ exit
 ls;clear
 ls
 ls
+ls
+echo daya 
+cd ..
+ls
+cdignment1
+cd Assignment1
+ls
+ls ..
+exit
+exit
+exit
+history
