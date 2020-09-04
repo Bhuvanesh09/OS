@@ -4,14 +4,16 @@
 
 #ifndef SHELL_SHELLSTATEDEF_H
 #define SHELL_SHELLSTATEDEF_H
-
+#include <string.h>
 struct shellState{
     char *user;
     char *hostname;
     char *currentPath;
+    char *homePath;
 };
 
 void updateShellState(struct shellState *state);
 void printShellState(struct shellState *state);
-
+void setHomePath(struct shellState *state);
+char *relativePath(struct shellState *state);
 #endif //SHELL_SHELLSTATEDEF_H

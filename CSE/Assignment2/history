@@ -1,13 +1,4 @@
 20
-tree &
-ls
-clear
-ls
-exit
-ls;clear
-ls
-ls
-ls
 echo daya 
 cd ..
 ls
@@ -19,3 +10,12 @@ exit
 exit
 exit
 history
+ls
+ls -l
+ls -a
+ls -la
+exit
+ls
+ls .
+ls ..
+exit

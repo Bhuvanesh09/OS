@@ -78,13 +78,31 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/mnt/e/OS/A2/shell/commandHandler.c">
+			<Option target="shell"/>
+		</Unit>
+		<Unit filename="/mnt/e/OS/A2/shell/commandHandler.h">
+			<Option target="shell"/>
+		</Unit>
+		<Unit filename="/mnt/e/OS/A2/shell/commands/cd.c">
+			<Option target="shell"/>
+		</Unit>
+		<Unit filename="/mnt/e/OS/A2/shell/commands/cd.h">
+			<Option target="shell"/>
+		</Unit>
+		<Unit filename="/mnt/e/OS/A2/shell/commands/echo.c">
+			<Option target="shell"/>
+		</Unit>
+		<Unit filename="/mnt/e/OS/A2/shell/commands/echo.h">
+			<Option target="shell"/>
+		</Unit>
+		<Unit filename="/mnt/e/OS/A2/shell/commands/ls.c">
+			<Option target="shell"/>
+		</Unit>
+		<Unit filename="/mnt/e/OS/A2/shell/commands/ls.h">
+			<Option target="shell"/>
+		</Unit>
 		<Unit filename="/mnt/e/OS/A2/shell/main.c">
-			<Option target="shell"/>
-		</Unit>
-		<Unit filename="/mnt/e/OS/A2/shell/utils/hud.c">
-			<Option target="shell"/>
-		</Unit>
-		<Unit filename="/mnt/e/OS/A2/shell/utils/hud.h">
 			<Option target="shell"/>
 		</Unit>
 		<Unit filename="/mnt/e/OS/A2/shell/utils/inputHandler.c">

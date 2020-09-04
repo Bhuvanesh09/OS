@@ -81,33 +81,9 @@ CMakeFiles/shell.dir/main.c.o.provides: CMakeFiles/shell.dir/main.c.o.requires
 CMakeFiles/shell.dir/main.c.o.provides.build: CMakeFiles/shell.dir/main.c.o
 
 
-CMakeFiles/shell.dir/utils/hud.c.o: CMakeFiles/shell.dir/flags.make
-CMakeFiles/shell.dir/utils/hud.c.o: ../utils/hud.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/e/OS/A2/shell/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/shell.dir/utils/hud.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/shell.dir/utils/hud.c.o   -c /mnt/e/OS/A2/shell/utils/hud.c
-
-CMakeFiles/shell.dir/utils/hud.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/shell.dir/utils/hud.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /mnt/e/OS/A2/shell/utils/hud.c > CMakeFiles/shell.dir/utils/hud.c.i
-
-CMakeFiles/shell.dir/utils/hud.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/shell.dir/utils/hud.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /mnt/e/OS/A2/shell/utils/hud.c -o CMakeFiles/shell.dir/utils/hud.c.s
-
-CMakeFiles/shell.dir/utils/hud.c.o.requires:
-
-.PHONY : CMakeFiles/shell.dir/utils/hud.c.o.requires
-
-CMakeFiles/shell.dir/utils/hud.c.o.provides: CMakeFiles/shell.dir/utils/hud.c.o.requires
-	$(MAKE) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/utils/hud.c.o.provides.build
-.PHONY : CMakeFiles/shell.dir/utils/hud.c.o.provides
-
-CMakeFiles/shell.dir/utils/hud.c.o.provides.build: CMakeFiles/shell.dir/utils/hud.c.o
-
-
 CMakeFiles/shell.dir/utils/shellStateDef.c.o: CMakeFiles/shell.dir/flags.make
 CMakeFiles/shell.dir/utils/shellStateDef.c.o: ../utils/shellStateDef.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/e/OS/A2/shell/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/shell.dir/utils/shellStateDef.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/e/OS/A2/shell/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/shell.dir/utils/shellStateDef.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/shell.dir/utils/shellStateDef.c.o   -c /mnt/e/OS/A2/shell/utils/shellStateDef.c
 
 CMakeFiles/shell.dir/utils/shellStateDef.c.i: cmake_force
@@ -131,7 +107,7 @@ CMakeFiles/shell.dir/utils/shellStateDef.c.o.provides.build: CMakeFiles/shell.di
 
 CMakeFiles/shell.dir/utils/inputHandler.c.o: CMakeFiles/shell.dir/flags.make
 CMakeFiles/shell.dir/utils/inputHandler.c.o: ../utils/inputHandler.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/e/OS/A2/shell/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/shell.dir/utils/inputHandler.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/e/OS/A2/shell/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/shell.dir/utils/inputHandler.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/shell.dir/utils/inputHandler.c.o   -c /mnt/e/OS/A2/shell/utils/inputHandler.c
 
 CMakeFiles/shell.dir/utils/inputHandler.c.i: cmake_force
@@ -153,23 +129,125 @@ CMakeFiles/shell.dir/utils/inputHandler.c.o.provides: CMakeFiles/shell.dir/utils
 CMakeFiles/shell.dir/utils/inputHandler.c.o.provides.build: CMakeFiles/shell.dir/utils/inputHandler.c.o
 
 
+CMakeFiles/shell.dir/commandHandler.c.o: CMakeFiles/shell.dir/flags.make
+CMakeFiles/shell.dir/commandHandler.c.o: ../commandHandler.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/e/OS/A2/shell/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/shell.dir/commandHandler.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/shell.dir/commandHandler.c.o   -c /mnt/e/OS/A2/shell/commandHandler.c
+
+CMakeFiles/shell.dir/commandHandler.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/shell.dir/commandHandler.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /mnt/e/OS/A2/shell/commandHandler.c > CMakeFiles/shell.dir/commandHandler.c.i
+
+CMakeFiles/shell.dir/commandHandler.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/shell.dir/commandHandler.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /mnt/e/OS/A2/shell/commandHandler.c -o CMakeFiles/shell.dir/commandHandler.c.s
+
+CMakeFiles/shell.dir/commandHandler.c.o.requires:
+
+.PHONY : CMakeFiles/shell.dir/commandHandler.c.o.requires
+
+CMakeFiles/shell.dir/commandHandler.c.o.provides: CMakeFiles/shell.dir/commandHandler.c.o.requires
+	$(MAKE) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/commandHandler.c.o.provides.build
+.PHONY : CMakeFiles/shell.dir/commandHandler.c.o.provides
+
+CMakeFiles/shell.dir/commandHandler.c.o.provides.build: CMakeFiles/shell.dir/commandHandler.c.o
+
+
+CMakeFiles/shell.dir/commands/cd.c.o: CMakeFiles/shell.dir/flags.make
+CMakeFiles/shell.dir/commands/cd.c.o: ../commands/cd.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/e/OS/A2/shell/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/shell.dir/commands/cd.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/shell.dir/commands/cd.c.o   -c /mnt/e/OS/A2/shell/commands/cd.c
+
+CMakeFiles/shell.dir/commands/cd.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/shell.dir/commands/cd.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /mnt/e/OS/A2/shell/commands/cd.c > CMakeFiles/shell.dir/commands/cd.c.i
+
+CMakeFiles/shell.dir/commands/cd.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/shell.dir/commands/cd.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /mnt/e/OS/A2/shell/commands/cd.c -o CMakeFiles/shell.dir/commands/cd.c.s
+
+CMakeFiles/shell.dir/commands/cd.c.o.requires:
+
+.PHONY : CMakeFiles/shell.dir/commands/cd.c.o.requires
+
+CMakeFiles/shell.dir/commands/cd.c.o.provides: CMakeFiles/shell.dir/commands/cd.c.o.requires
+	$(MAKE) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/commands/cd.c.o.provides.build
+.PHONY : CMakeFiles/shell.dir/commands/cd.c.o.provides
+
+CMakeFiles/shell.dir/commands/cd.c.o.provides.build: CMakeFiles/shell.dir/commands/cd.c.o
+
+
+CMakeFiles/shell.dir/commands/echo.c.o: CMakeFiles/shell.dir/flags.make
+CMakeFiles/shell.dir/commands/echo.c.o: ../commands/echo.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/e/OS/A2/shell/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/shell.dir/commands/echo.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/shell.dir/commands/echo.c.o   -c /mnt/e/OS/A2/shell/commands/echo.c
+
+CMakeFiles/shell.dir/commands/echo.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/shell.dir/commands/echo.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /mnt/e/OS/A2/shell/commands/echo.c > CMakeFiles/shell.dir/commands/echo.c.i
+
+CMakeFiles/shell.dir/commands/echo.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/shell.dir/commands/echo.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /mnt/e/OS/A2/shell/commands/echo.c -o CMakeFiles/shell.dir/commands/echo.c.s
+
+CMakeFiles/shell.dir/commands/echo.c.o.requires:
+
+.PHONY : CMakeFiles/shell.dir/commands/echo.c.o.requires
+
+CMakeFiles/shell.dir/commands/echo.c.o.provides: CMakeFiles/shell.dir/commands/echo.c.o.requires
+	$(MAKE) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/commands/echo.c.o.provides.build
+.PHONY : CMakeFiles/shell.dir/commands/echo.c.o.provides
+
+CMakeFiles/shell.dir/commands/echo.c.o.provides.build: CMakeFiles/shell.dir/commands/echo.c.o
+
+
+CMakeFiles/shell.dir/commands/ls.c.o: CMakeFiles/shell.dir/flags.make
+CMakeFiles/shell.dir/commands/ls.c.o: ../commands/ls.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/e/OS/A2/shell/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object CMakeFiles/shell.dir/commands/ls.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/shell.dir/commands/ls.c.o   -c /mnt/e/OS/A2/shell/commands/ls.c
+
+CMakeFiles/shell.dir/commands/ls.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/shell.dir/commands/ls.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /mnt/e/OS/A2/shell/commands/ls.c > CMakeFiles/shell.dir/commands/ls.c.i
+
+CMakeFiles/shell.dir/commands/ls.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/shell.dir/commands/ls.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /mnt/e/OS/A2/shell/commands/ls.c -o CMakeFiles/shell.dir/commands/ls.c.s
+
+CMakeFiles/shell.dir/commands/ls.c.o.requires:
+
+.PHONY : CMakeFiles/shell.dir/commands/ls.c.o.requires
+
+CMakeFiles/shell.dir/commands/ls.c.o.provides: CMakeFiles/shell.dir/commands/ls.c.o.requires
+	$(MAKE) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/commands/ls.c.o.provides.build
+.PHONY : CMakeFiles/shell.dir/commands/ls.c.o.provides
+
+CMakeFiles/shell.dir/commands/ls.c.o.provides.build: CMakeFiles/shell.dir/commands/ls.c.o
+
+
 # Object files for target shell
 shell_OBJECTS = \
 "CMakeFiles/shell.dir/main.c.o" \
-"CMakeFiles/shell.dir/utils/hud.c.o" \
 "CMakeFiles/shell.dir/utils/shellStateDef.c.o" \
-"CMakeFiles/shell.dir/utils/inputHandler.c.o"
+"CMakeFiles/shell.dir/utils/inputHandler.c.o" \
+"CMakeFiles/shell.dir/commandHandler.c.o" \
+"CMakeFiles/shell.dir/commands/cd.c.o" \
+"CMakeFiles/shell.dir/commands/echo.c.o" \
+"CMakeFiles/shell.dir/commands/ls.c.o"
 
 # External object files for target shell
 shell_EXTERNAL_OBJECTS =
 
 shell: CMakeFiles/shell.dir/main.c.o
-shell: CMakeFiles/shell.dir/utils/hud.c.o
 shell: CMakeFiles/shell.dir/utils/shellStateDef.c.o
 shell: CMakeFiles/shell.dir/utils/inputHandler.c.o
+shell: CMakeFiles/shell.dir/commandHandler.c.o
+shell: CMakeFiles/shell.dir/commands/cd.c.o
+shell: CMakeFiles/shell.dir/commands/echo.c.o
+shell: CMakeFiles/shell.dir/commands/ls.c.o
 shell: CMakeFiles/shell.dir/build.make
 shell: CMakeFiles/shell.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/mnt/e/OS/A2/shell/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking C executable shell"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/mnt/e/OS/A2/shell/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Linking C executable shell"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/shell.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -178,9 +256,12 @@ CMakeFiles/shell.dir/build: shell
 .PHONY : CMakeFiles/shell.dir/build
 
 CMakeFiles/shell.dir/requires: CMakeFiles/shell.dir/main.c.o.requires
-CMakeFiles/shell.dir/requires: CMakeFiles/shell.dir/utils/hud.c.o.requires
 CMakeFiles/shell.dir/requires: CMakeFiles/shell.dir/utils/shellStateDef.c.o.requires
 CMakeFiles/shell.dir/requires: CMakeFiles/shell.dir/utils/inputHandler.c.o.requires
+CMakeFiles/shell.dir/requires: CMakeFiles/shell.dir/commandHandler.c.o.requires
+CMakeFiles/shell.dir/requires: CMakeFiles/shell.dir/commands/cd.c.o.requires
+CMakeFiles/shell.dir/requires: CMakeFiles/shell.dir/commands/echo.c.o.requires
+CMakeFiles/shell.dir/requires: CMakeFiles/shell.dir/commands/ls.c.o.requires
 
 .PHONY : CMakeFiles/shell.dir/requires
 

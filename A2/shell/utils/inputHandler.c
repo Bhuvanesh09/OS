@@ -10,7 +10,7 @@ void updateCommand(char *commandString){
     getline(&commandString, &size, stdin);
 }
 
-int splitStringOnSpaces(char *string, char **parsedArray){
+int splitStringOnSpaces(char *string, char *parsedArray[]){
     // This parses the string on spaces and returns the number of things it parsed it to.
     char delim[] = " \t\n";
     char *stringCopy = (char *)malloc(sizeof(char)*1000);

@@ -1,8 +1,11 @@
 file(REMOVE_RECURSE
   "CMakeFiles/shell.dir/main.c.o"
-  "CMakeFiles/shell.dir/utils/hud.c.o"
   "CMakeFiles/shell.dir/utils/shellStateDef.c.o"
   "CMakeFiles/shell.dir/utils/inputHandler.c.o"
+  "CMakeFiles/shell.dir/commandHandler.c.o"
+  "CMakeFiles/shell.dir/commands/cd.c.o"
+  "CMakeFiles/shell.dir/commands/echo.c.o"
+  "CMakeFiles/shell.dir/commands/ls.c.o"
   "shell.pdb"
   "shell"
 )

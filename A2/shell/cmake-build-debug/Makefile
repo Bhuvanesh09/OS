@@ -123,6 +123,114 @@ shell/fast:
 	$(MAKE) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/build
 .PHONY : shell/fast
 
+commandHandler.o: commandHandler.c.o
+
+.PHONY : commandHandler.o
+
+# target to build an object file
+commandHandler.c.o:
+	$(MAKE) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/commandHandler.c.o
+.PHONY : commandHandler.c.o
+
+commandHandler.i: commandHandler.c.i
+
+.PHONY : commandHandler.i
+
+# target to preprocess a source file
+commandHandler.c.i:
+	$(MAKE) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/commandHandler.c.i
+.PHONY : commandHandler.c.i
+
+commandHandler.s: commandHandler.c.s
+
+.PHONY : commandHandler.s
+
+# target to generate assembly for a file
+commandHandler.c.s:
+	$(MAKE) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/commandHandler.c.s
+.PHONY : commandHandler.c.s
+
+commands/cd.o: commands/cd.c.o
+
+.PHONY : commands/cd.o
+
+# target to build an object file
+commands/cd.c.o:
+	$(MAKE) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/commands/cd.c.o
+.PHONY : commands/cd.c.o
+
+commands/cd.i: commands/cd.c.i
+
+.PHONY : commands/cd.i
+
+# target to preprocess a source file
+commands/cd.c.i:
+	$(MAKE) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/commands/cd.c.i
+.PHONY : commands/cd.c.i
+
+commands/cd.s: commands/cd.c.s
+
+.PHONY : commands/cd.s
+
+# target to generate assembly for a file
+commands/cd.c.s:
+	$(MAKE) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/commands/cd.c.s
+.PHONY : commands/cd.c.s
+
+commands/echo.o: commands/echo.c.o
+
+.PHONY : commands/echo.o
+
+# target to build an object file
+commands/echo.c.o:
+	$(MAKE) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/commands/echo.c.o
+.PHONY : commands/echo.c.o
+
+commands/echo.i: commands/echo.c.i
+
+.PHONY : commands/echo.i
+
+# target to preprocess a source file
+commands/echo.c.i:
+	$(MAKE) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/commands/echo.c.i
+.PHONY : commands/echo.c.i
+
+commands/echo.s: commands/echo.c.s
+
+.PHONY : commands/echo.s
+
+# target to generate assembly for a file
+commands/echo.c.s:
+	$(MAKE) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/commands/echo.c.s
+.PHONY : commands/echo.c.s
+
+commands/ls.o: commands/ls.c.o
+
+.PHONY : commands/ls.o
+
+# target to build an object file
+commands/ls.c.o:
+	$(MAKE) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/commands/ls.c.o
+.PHONY : commands/ls.c.o
+
+commands/ls.i: commands/ls.c.i
+
+.PHONY : commands/ls.i
+
+# target to preprocess a source file
+commands/ls.c.i:
+	$(MAKE) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/commands/ls.c.i
+.PHONY : commands/ls.c.i
+
+commands/ls.s: commands/ls.c.s
+
+.PHONY : commands/ls.s
+
+# target to generate assembly for a file
+commands/ls.c.s:
+	$(MAKE) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/commands/ls.c.s
+.PHONY : commands/ls.c.s
+
 main.o: main.c.o
 
 .PHONY : main.o
@@ -149,33 +257,6 @@ main.s: main.c.s
 main.c.s:
 	$(MAKE) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/main.c.s
 .PHONY : main.c.s
-
-utils/hud.o: utils/hud.c.o
-
-.PHONY : utils/hud.o
-
-# target to build an object file
-utils/hud.c.o:
-	$(MAKE) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/utils/hud.c.o
-.PHONY : utils/hud.c.o
-
-utils/hud.i: utils/hud.c.i
-
-.PHONY : utils/hud.i
-
-# target to preprocess a source file
-utils/hud.c.i:
-	$(MAKE) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/utils/hud.c.i
-.PHONY : utils/hud.c.i
-
-utils/hud.s: utils/hud.c.s
-
-.PHONY : utils/hud.s
-
-# target to generate assembly for a file
-utils/hud.c.s:
-	$(MAKE) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/utils/hud.c.s
-.PHONY : utils/hud.c.s
 
 utils/inputHandler.o: utils/inputHandler.c.o
 
@@ -240,12 +321,21 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... shell"
 	@echo "... edit_cache"
+	@echo "... commandHandler.o"
+	@echo "... commandHandler.i"
+	@echo "... commandHandler.s"
+	@echo "... commands/cd.o"
+	@echo "... commands/cd.i"
+	@echo "... commands/cd.s"
+	@echo "... commands/echo.o"
+	@echo "... commands/echo.i"
+	@echo "... commands/echo.s"
+	@echo "... commands/ls.o"
+	@echo "... commands/ls.i"
+	@echo "... commands/ls.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
-	@echo "... utils/hud.o"
-	@echo "... utils/hud.i"
-	@echo "... utils/hud.s"
 	@echo "... utils/inputHandler.o"
 	@echo "... utils/inputHandler.i"
 	@echo "... utils/inputHandler.s"

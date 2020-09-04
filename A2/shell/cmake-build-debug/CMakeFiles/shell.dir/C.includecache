@@ -6,6 +6,62 @@
 
 #IncludeRegexTransform: 
 
+/mnt/e/OS/A2/shell/commandHandler.c
+commandHandler.h
+/mnt/e/OS/A2/shell/commandHandler.h
+
+/mnt/e/OS/A2/shell/commandHandler.h
+utils/shellStateDef.h
+/mnt/e/OS/A2/shell/utils/shellStateDef.h
+commands/cd.h
+/mnt/e/OS/A2/shell/commands/cd.h
+commands/echo.h
+/mnt/e/OS/A2/shell/commands/echo.h
+commands/ls.h
+/mnt/e/OS/A2/shell/commands/ls.h
+stdlib.h
+-
+
+/mnt/e/OS/A2/shell/commands/cd.c
+cd.h
+/mnt/e/OS/A2/shell/commands/cd.h
+
+/mnt/e/OS/A2/shell/commands/cd.h
+../utils/shellStateDef.h
+/mnt/e/OS/A2/shell/utils/shellStateDef.h
+unistd.h
+-
+stdio.h
+-
+
+/mnt/e/OS/A2/shell/commands/echo.c
+echo.h
+/mnt/e/OS/A2/shell/commands/echo.h
+
+/mnt/e/OS/A2/shell/commands/echo.h
+../utils/shellStateDef.h
+/mnt/e/OS/A2/shell/utils/shellStateDef.h
+stdio.h
+-
+stdlib.h
+-
+
+/mnt/e/OS/A2/shell/commands/ls.c
+ls.h
+/mnt/e/OS/A2/shell/commands/ls.h
+
+/mnt/e/OS/A2/shell/commands/ls.h
+../utils/shellStateDef.h
+/mnt/e/OS/A2/shell/utils/shellStateDef.h
+stdio.h
+-
+dirent.h
+-
+sys/stat.h
+-
+stdlib.h
+-
+
 /mnt/e/OS/A2/shell/main.c
 stdlib.h
 -
@@ -13,14 +69,8 @@ utils/shellStateDef.h
 /mnt/e/OS/A2/shell/utils/shellStateDef.h
 utils/inputHandler.h
 /mnt/e/OS/A2/shell/utils/inputHandler.h
-
-/mnt/e/OS/A2/shell/utils/hud.c
-hud.h
-/mnt/e/OS/A2/shell/utils/hud.h
-
-/mnt/e/OS/A2/shell/utils/hud.h
-stdio.h
--
+commandHandler.h
+/mnt/e/OS/A2/shell/commandHandler.h
 
 /mnt/e/OS/A2/shell/utils/inputHandler.c
 memory.h
@@ -45,4 +95,6 @@ shellStateDef.h
 /mnt/e/OS/A2/shell/utils/shellStateDef.h
 
 /mnt/e/OS/A2/shell/utils/shellStateDef.h
+string.h
+-
 
