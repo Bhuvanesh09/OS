@@ -13,6 +13,7 @@ int main() {
         updateShellState(currentShellState);
         printShellState(currentShellState);
         updateCommand(currentCommand);
+        if(strcmp(currentCommand, "\n") == 0) continue;
         int commandPartSize = splitStringOnSpaces(currentCommand, commandPartArray);
         handleCommand(currentShellState, commandPartArray, commandPartSize, currentCommand);
     }

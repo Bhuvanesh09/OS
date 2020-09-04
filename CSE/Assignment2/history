@@ -1,9 +1,4 @@
 20
-echo daya 
-cd ..
-ls
-cdignment1
-cd Assignment1
 ls
 ls ..
 exit
@@ -18,4 +13,9 @@ exit
 ls
 ls .
 ls ..
+exit
+ls
+ls -l
+ls -la
+ls
 exit

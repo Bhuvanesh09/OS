@@ -47,6 +47,8 @@ stdlib.h
 -
 
 /mnt/e/OS/A2/shell/commands/ls.c
+time.h
+-
 ls.h
 /mnt/e/OS/A2/shell/commands/ls.h
 
@@ -60,6 +62,10 @@ dirent.h
 sys/stat.h
 -
 stdlib.h
+-
+pwd.h
+-
+grp.h
 -
 
 /mnt/e/OS/A2/shell/main.c

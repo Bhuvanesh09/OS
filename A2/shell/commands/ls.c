@@ -2,8 +2,28 @@
 // Created by simpl on 04-09-2020.
 //
 
+#include <time.h>
 #include "ls.h"
-
+char * getUsername(uid_t userId){
+    struct passwd *pws;
+    pws = getpwuid(userId);
+    if(!pws){
+        char *tempStr = (char *) malloc(sizeof(char) * 100);
+        sprintf(tempStr, "%d", userId);
+        return tempStr;
+    }
+    return pws->pw_name;
+}
+char * getGroupName(gid_t groupId){
+    struct group *grp;
+    grp = getgrgid(groupId);
+    if(!grp){
+        char *tempStr = (char *) malloc(sizeof(char) * 100);
+        sprintf(tempStr, "%d", groupId);
+        return tempStr;
+    }
+    return grp->gr_name;
+}
 void resolveFlags(char *option, int *flagL, int *flagA){
     for(int i=1; i<strlen(option); i++){
         if(option[i] == 'l') *flagL = 1;
@@ -42,7 +62,10 @@ void resolveDirEntry(struct dirent *dirEntry, int flagL){
     strcat(permission, statObject.st_mode & S_IWOTH ? "w" : "-");
     strcat(permission, statObject.st_mode & S_IXOTH ? "x" : "-");
 
-    printf("%10s %s\n", permission, dirEntry->d_name) ;
+    char *timeMod = ctime(&statObject.st_mtime);
+    timeMod[strlen(timeMod) - 1] = ' ';
+    timeMod += 4;
+    printf("%10s %d %s %s %s %s\n", permission, (int)statObject.st_nlink, getUsername(statObject.st_uid), getGroupName(statObject.st_gid),timeMod,  dirEntry->d_name) ;
 }
 int ls(struct shellState *currentState, char **commandArray, int numParts){
     int flagA = 0, flagL = 0;
@@ -59,8 +82,9 @@ int ls(struct shellState *currentState, char **commandArray, int numParts){
 
     struct dirent *DirEntry ;
     DIR *dirInstance = opendir(directory);
-    if(!dirInstance){
-        printf("Shell encountered an error in opening this Directory.\n");
+    if(dirInstance == NULL){
+        perror(directory);
+        return -1;
     }
     DirEntry = readdir(dirInstance);
     while(DirEntry){
