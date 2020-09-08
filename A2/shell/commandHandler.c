@@ -18,4 +18,7 @@ void handleCommand(struct shellState *currentShellState, char *commandArray[], i
     else if(strcmp(commandArray[0], "ls") == 0){
         ls(currentShellState, commandArray, numParts);
     }
+    else{
+        executeGeneralCommand(currentShellState, commandArray, numParts);
+    }
 }

@@ -96,6 +96,12 @@
 		<Unit filename="/mnt/e/OS/A2/shell/commands/echo.h">
 			<Option target="shell"/>
 		</Unit>
+		<Unit filename="/mnt/e/OS/A2/shell/commands/generalCommand.c">
+			<Option target="shell"/>
+		</Unit>
+		<Unit filename="/mnt/e/OS/A2/shell/commands/generalCommand.h">
+			<Option target="shell"/>
+		</Unit>
 		<Unit filename="/mnt/e/OS/A2/shell/commands/ls.c">
 			<Option target="shell"/>
 		</Unit>

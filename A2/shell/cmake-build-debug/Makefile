@@ -204,6 +204,33 @@ commands/echo.c.s:
 	$(MAKE) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/commands/echo.c.s
 .PHONY : commands/echo.c.s
 
+commands/generalCommand.o: commands/generalCommand.c.o
+
+.PHONY : commands/generalCommand.o
+
+# target to build an object file
+commands/generalCommand.c.o:
+	$(MAKE) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/commands/generalCommand.c.o
+.PHONY : commands/generalCommand.c.o
+
+commands/generalCommand.i: commands/generalCommand.c.i
+
+.PHONY : commands/generalCommand.i
+
+# target to preprocess a source file
+commands/generalCommand.c.i:
+	$(MAKE) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/commands/generalCommand.c.i
+.PHONY : commands/generalCommand.c.i
+
+commands/generalCommand.s: commands/generalCommand.c.s
+
+.PHONY : commands/generalCommand.s
+
+# target to generate assembly for a file
+commands/generalCommand.c.s:
+	$(MAKE) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/commands/generalCommand.c.s
+.PHONY : commands/generalCommand.c.s
+
 commands/ls.o: commands/ls.c.o
 
 .PHONY : commands/ls.o
@@ -330,6 +357,9 @@ help:
 	@echo "... commands/echo.o"
 	@echo "... commands/echo.i"
 	@echo "... commands/echo.s"
+	@echo "... commands/generalCommand.o"
+	@echo "... commands/generalCommand.i"
+	@echo "... commands/generalCommand.s"
 	@echo "... commands/ls.o"
 	@echo "... commands/ls.i"
 	@echo "... commands/ls.s"

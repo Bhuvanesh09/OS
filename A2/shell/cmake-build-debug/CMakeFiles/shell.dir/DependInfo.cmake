@@ -7,6 +7,7 @@ set(CMAKE_DEPENDS_CHECK_C
   "/mnt/e/OS/A2/shell/commandHandler.c" "/mnt/e/OS/A2/shell/cmake-build-debug/CMakeFiles/shell.dir/commandHandler.c.o"
   "/mnt/e/OS/A2/shell/commands/cd.c" "/mnt/e/OS/A2/shell/cmake-build-debug/CMakeFiles/shell.dir/commands/cd.c.o"
   "/mnt/e/OS/A2/shell/commands/echo.c" "/mnt/e/OS/A2/shell/cmake-build-debug/CMakeFiles/shell.dir/commands/echo.c.o"
+  "/mnt/e/OS/A2/shell/commands/generalCommand.c" "/mnt/e/OS/A2/shell/cmake-build-debug/CMakeFiles/shell.dir/commands/generalCommand.c.o"
   "/mnt/e/OS/A2/shell/commands/ls.c" "/mnt/e/OS/A2/shell/cmake-build-debug/CMakeFiles/shell.dir/commands/ls.c.o"
   "/mnt/e/OS/A2/shell/main.c" "/mnt/e/OS/A2/shell/cmake-build-debug/CMakeFiles/shell.dir/main.c.o"
   "/mnt/e/OS/A2/shell/utils/inputHandler.c" "/mnt/e/OS/A2/shell/cmake-build-debug/CMakeFiles/shell.dir/utils/inputHandler.c.o"

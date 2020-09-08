@@ -8,6 +8,7 @@
 #include "commands/cd.h"
 #include "commands/echo.h"
 #include "commands/ls.h"
+#include "commands/generalCommand.h"
 #include <stdlib.h>
 void handleCommand(struct shellState *currentShellState, char **commandArray, int numParts, char *rawCommand);
 #endif //SHELL_COMMANDHANDLER_H
