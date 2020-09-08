@@ -7,12 +7,29 @@
 #include <stdlib.h>
 #include <sys/wait.h>
 #include "generalCommand.h"
+
+
+char *jobIdFake[40000];
+
+void childExit(){
+    pid_t	pid;
+    int stat;
+    pid = waitpid(-1,&stat, WNOHANG);
+    if(pid <= 0) return;
+
+    if(stat != 0){
+        fprintf(stderr, "The process %s with pid = %d, give a failed exit code :( ", jobIdFake[pid], pid);
+    }
+    else {
+        fprintf(stderr, "The process %s with pid = %d ended normally. :)   ", jobIdFake[pid], pid);
+    }
+}
 int executeGeneralCommand(struct shellState *currentState, char ** commandArray, int nparts){
     pid_t pid;
     int forkReturn = 0;
     int isBackground = 0;
     if(strcmp(commandArray[nparts-1], "&") == 0) isBackground = 1;
-
+    signal(SIGCHLD, childExit);
     pid = fork();
 
     if(pid<0){
@@ -32,7 +49,10 @@ int executeGeneralCommand(struct shellState *currentState, char ** commandArray,
 
    if(isBackground){
        //handle background
-       printf("Background apps don;t work yet");
+       char *name = (char *) malloc(sizeof(char) * 1000);
+       strcpy(name, commandArray[0]);
+       jobIdFake[pid] = name;
+//       currentState -> jobList[pid] = name;
    }
    else {
         while(wait(NULL) != pid) { }; //waits till the current child returns with a value.

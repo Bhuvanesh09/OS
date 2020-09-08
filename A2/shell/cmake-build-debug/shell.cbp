@@ -108,6 +108,12 @@
 		<Unit filename="/mnt/e/OS/A2/shell/commands/ls.h">
 			<Option target="shell"/>
 		</Unit>
+		<Unit filename="/mnt/e/OS/A2/shell/commands/pinfo.c">
+			<Option target="shell"/>
+		</Unit>
+		<Unit filename="/mnt/e/OS/A2/shell/commands/pinfo.h">
+			<Option target="shell"/>
+		</Unit>
 		<Unit filename="/mnt/e/OS/A2/shell/main.c">
 			<Option target="shell"/>
 		</Unit>

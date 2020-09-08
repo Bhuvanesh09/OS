@@ -5,7 +5,9 @@ CMakeFiles/shell.dir/commandHandler.c.o: ../commandHandler.c
 CMakeFiles/shell.dir/commandHandler.c.o: ../commandHandler.h
 CMakeFiles/shell.dir/commandHandler.c.o: ../commands/cd.h
 CMakeFiles/shell.dir/commandHandler.c.o: ../commands/echo.h
+CMakeFiles/shell.dir/commandHandler.c.o: ../commands/generalCommand.h
 CMakeFiles/shell.dir/commandHandler.c.o: ../commands/ls.h
+CMakeFiles/shell.dir/commandHandler.c.o: ../commands/pinfo.h
 CMakeFiles/shell.dir/commandHandler.c.o: ../utils/shellStateDef.h
 
 CMakeFiles/shell.dir/commands/cd.c.o: ../commands/cd.c
@@ -16,13 +18,22 @@ CMakeFiles/shell.dir/commands/echo.c.o: ../commands/echo.c
 CMakeFiles/shell.dir/commands/echo.c.o: ../commands/echo.h
 CMakeFiles/shell.dir/commands/echo.c.o: ../utils/shellStateDef.h
 
+CMakeFiles/shell.dir/commands/generalCommand.c.o: ../commands/generalCommand.c
+CMakeFiles/shell.dir/commands/generalCommand.c.o: ../commands/generalCommand.h
+CMakeFiles/shell.dir/commands/generalCommand.c.o: ../utils/shellStateDef.h
+
 CMakeFiles/shell.dir/commands/ls.c.o: ../commands/ls.c
 CMakeFiles/shell.dir/commands/ls.c.o: ../commands/ls.h
 CMakeFiles/shell.dir/commands/ls.c.o: ../utils/shellStateDef.h
 
+CMakeFiles/shell.dir/commands/pinfo.c.o: ../commands/pinfo.c
+CMakeFiles/shell.dir/commands/pinfo.c.o: ../commands/pinfo.h
+CMakeFiles/shell.dir/commands/pinfo.c.o: ../utils/shellStateDef.h
+
 CMakeFiles/shell.dir/main.c.o: ../commandHandler.h
 CMakeFiles/shell.dir/main.c.o: ../commands/cd.h
 CMakeFiles/shell.dir/main.c.o: ../commands/echo.h
+CMakeFiles/shell.dir/main.c.o: ../commands/generalCommand.h
 CMakeFiles/shell.dir/main.c.o: ../commands/ls.h
 CMakeFiles/shell.dir/main.c.o: ../main.c
 CMakeFiles/shell.dir/main.c.o: ../utils/inputHandler.h

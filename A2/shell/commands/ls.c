@@ -32,11 +32,28 @@ void resolveFlags(char *option, int *flagL, int *flagA){
     }
     return;
 }
-void resolveDirectory(struct shellState *currentState, char *arg, char *directory){
+void resolveDirectory(struct shellState *currentState, char *arg, char *directory, int flagA, int flagL){
     if(strcmp(arg, "~") == 0){
         strcpy(directory, currentState->homePath);
     }else {
         strcpy(directory, arg);
+    }
+
+
+    struct dirent *DirEntry ;
+    DIR *dirInstance = opendir(directory);
+    if(dirInstance == NULL){
+        perror(directory);
+        return -1;
+    }
+    DirEntry = readdir(dirInstance);
+    while(DirEntry){
+        if(DirEntry->d_name[0] == '.' && !flagA){
+            DirEntry = readdir((dirInstance));
+            continue;
+        }
+        resolveDirEntry(DirEntry, flagL);
+        DirEntry = readdir(dirInstance);
     }
     return;
 }
@@ -76,24 +93,21 @@ int ls(struct shellState *currentState, char **commandArray, int numParts){
             resolveFlags(commandArray[i], &flagL, &flagA);
             continue;
         }else {
-            resolveDirectory(currentState, commandArray[i], directory);
+//            resolveDirectory(currentState, commandArray[i], directory);
+        }
+    }
+    int displayedOrNot = 0;
+    for(int i=1; i<numParts; i++){
+        if(commandArray[i][0] == '-'){
+//            resolveFlags(commandArray[i], &flagL, &flagA);
+            continue;
+        }else {
+            displayedOrNot = 1;
+            resolveDirectory(currentState, commandArray[i], directory, flagA, flagL);
         }
     }
 
-    struct dirent *DirEntry ;
-    DIR *dirInstance = opendir(directory);
-    if(dirInstance == NULL){
-        perror(directory);
-        return -1;
-    }
-    DirEntry = readdir(dirInstance);
-    while(DirEntry){
-        if(DirEntry->d_name[0] == '.' && !flagA){
-            DirEntry = readdir((dirInstance));
-            continue;
-        }
-        resolveDirEntry(DirEntry, flagL);
-        DirEntry = readdir(dirInstance);
-    }
-    return 1;
+    if (!displayedOrNot) resolveDirectory(currentState, currentState->currentPath, directory,flagA, flagL);
+
+   return 1;
 }

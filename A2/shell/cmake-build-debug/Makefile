@@ -258,6 +258,33 @@ commands/ls.c.s:
 	$(MAKE) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/commands/ls.c.s
 .PHONY : commands/ls.c.s
 
+commands/pinfo.o: commands/pinfo.c.o
+
+.PHONY : commands/pinfo.o
+
+# target to build an object file
+commands/pinfo.c.o:
+	$(MAKE) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/commands/pinfo.c.o
+.PHONY : commands/pinfo.c.o
+
+commands/pinfo.i: commands/pinfo.c.i
+
+.PHONY : commands/pinfo.i
+
+# target to preprocess a source file
+commands/pinfo.c.i:
+	$(MAKE) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/commands/pinfo.c.i
+.PHONY : commands/pinfo.c.i
+
+commands/pinfo.s: commands/pinfo.c.s
+
+.PHONY : commands/pinfo.s
+
+# target to generate assembly for a file
+commands/pinfo.c.s:
+	$(MAKE) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/commands/pinfo.c.s
+.PHONY : commands/pinfo.c.s
+
 main.o: main.c.o
 
 .PHONY : main.o
@@ -363,6 +390,9 @@ help:
 	@echo "... commands/ls.o"
 	@echo "... commands/ls.i"
 	@echo "... commands/ls.s"
+	@echo "... commands/pinfo.o"
+	@echo "... commands/pinfo.i"
+	@echo "... commands/pinfo.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

@@ -5,11 +5,13 @@
 #ifndef SHELL_SHELLSTATEDEF_H
 #define SHELL_SHELLSTATEDEF_H
 #include <string.h>
+
 struct shellState{
     char *user;
     char *hostname;
     char *currentPath;
     char *homePath;
+    char *jobList[40000];
 };
 
 void updateShellState(struct shellState *state);
