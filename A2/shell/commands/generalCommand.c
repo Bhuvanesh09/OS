@@ -9,7 +9,7 @@
 #include "generalCommand.h"
 
 
-char *jobIdFake[40000];
+char *jobIdFake[1000000];
 
 void childExit(){
     pid_t	pid;
@@ -18,7 +18,7 @@ void childExit(){
     if(pid <= 0) return;
 
     if(stat != 0){
-        fprintf(stderr, "The process %s with pid = %d, give a failed exit code :( ", jobIdFake[pid], pid);
+        fprintf(stderr, "The process %s with pid = %d, gave a failed exit code :( ", jobIdFake[pid], pid);
     }
     else {
         fprintf(stderr, "The process %s with pid = %d ended normally. :)   ", jobIdFake[pid], pid);

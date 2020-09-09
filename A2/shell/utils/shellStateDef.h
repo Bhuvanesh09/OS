@@ -11,7 +11,6 @@ struct shellState{
     char *hostname;
     char *currentPath;
     char *homePath;
-    char *jobList[40000];
 };
 
 void updateShellState(struct shellState *state);
