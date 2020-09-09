@@ -27,6 +27,8 @@ stdlib.h
 -
 
 /mnt/e/OS/A2/shell/commands/cd.c
+stdlib.h
+-
 cd.h
 /mnt/e/OS/A2/shell/commands/cd.h
 
