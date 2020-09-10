@@ -91,6 +91,10 @@ Note: The makefile for this program was made by cmake.
 - This file handles all the commands which are not part of the above lot.
 - Also handles background and foreground apps.
 
+### history.c
+
+- Has code to add to the history, read from history etc in the home directory.
+
 ---
 
 The End

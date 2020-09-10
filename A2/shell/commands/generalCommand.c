@@ -33,6 +33,7 @@ int executeGeneralCommand(struct shellState *currentState, char ** commandArray,
     pid = fork();
 
     if(pid<0){
+
         perror("Couldn't create a child process. :(");
         return -1;
     }
@@ -40,7 +41,7 @@ int executeGeneralCommand(struct shellState *currentState, char ** commandArray,
    if(pid == 0) {
        if(execvp(commandArray[0], commandArray) < 0){
            perror("Command Doesn't exist :(");
-           return -1;
+           exit(1);
        };
 
        //If reaches here, it means command successful :)

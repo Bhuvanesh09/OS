@@ -16,9 +16,9 @@ int main() {
         printShellState(currentShellState);
         updateCommand(currentCommand);
         if(strcmp(currentCommand, "\n") == 0) continue;
+        addToHistory(currentShellState, currentCommand);
         int commandPartSize = splitStringOnSpaces(currentCommand, commandPartArray);
         handleCommand(currentShellState, commandPartArray, commandPartSize, currentCommand);
-        addToHistory(currentShellState, currentCommand);
     }
 #pragma clang diagnostic pop
     return 0;
