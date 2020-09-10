@@ -3,5 +3,5 @@ project(shell C)
 
 set(CMAKE_C_STANDARD 11)
 
-add_executable(shell main.c utils/shellStateDef.c utils/shellStateDef.h utils/inputHandler.c utils/inputHandler.h commandHandler.c commandHandler.h commands/cd.c commands/cd.h commands/echo.c commands/echo.h commands/ls.c commands/ls.h commands/generalCommand.c commands/generalCommand.h commands/pinfo.c commands/pinfo.h)
+add_executable(shell main.c utils/shellStateDef.c utils/shellStateDef.h utils/inputHandler.c utils/inputHandler.h commandHandler.c commandHandler.h commands/cd.c commands/cd.h commands/echo.c commands/echo.h commands/ls.c commands/ls.h commands/generalCommand.c commands/generalCommand.h commands/pinfo.c commands/pinfo.h commands/history.c commands/history.h)
 target_link_libraries(shell m)

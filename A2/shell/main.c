@@ -2,6 +2,8 @@
 #include "utils/shellStateDef.h"
 #include "utils/inputHandler.h"
 #include "commandHandler.h"
+#include "commands/history.h"
+
 int main() {
     struct shellState *currentShellState = (struct shellState*) malloc(sizeof(struct shellState));
     char *currentCommand = (char *) malloc(sizeof(char) * 100);
@@ -16,6 +18,7 @@ int main() {
         if(strcmp(currentCommand, "\n") == 0) continue;
         int commandPartSize = splitStringOnSpaces(currentCommand, commandPartArray);
         handleCommand(currentShellState, commandPartArray, commandPartSize, currentCommand);
+        addToHistory(currentShellState, currentCommand);
     }
 #pragma clang diagnostic pop
     return 0;

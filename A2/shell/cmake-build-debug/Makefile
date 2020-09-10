@@ -231,6 +231,33 @@ commands/generalCommand.c.s:
 	$(MAKE) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/commands/generalCommand.c.s
 .PHONY : commands/generalCommand.c.s
 
+commands/history.o: commands/history.c.o
+
+.PHONY : commands/history.o
+
+# target to build an object file
+commands/history.c.o:
+	$(MAKE) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/commands/history.c.o
+.PHONY : commands/history.c.o
+
+commands/history.i: commands/history.c.i
+
+.PHONY : commands/history.i
+
+# target to preprocess a source file
+commands/history.c.i:
+	$(MAKE) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/commands/history.c.i
+.PHONY : commands/history.c.i
+
+commands/history.s: commands/history.c.s
+
+.PHONY : commands/history.s
+
+# target to generate assembly for a file
+commands/history.c.s:
+	$(MAKE) -f CMakeFiles/shell.dir/build.make CMakeFiles/shell.dir/commands/history.c.s
+.PHONY : commands/history.c.s
+
 commands/ls.o: commands/ls.c.o
 
 .PHONY : commands/ls.o
@@ -387,6 +414,9 @@ help:
 	@echo "... commands/generalCommand.o"
 	@echo "... commands/generalCommand.i"
 	@echo "... commands/generalCommand.s"
+	@echo "... commands/history.o"
+	@echo "... commands/history.i"
+	@echo "... commands/history.s"
 	@echo "... commands/ls.o"
 	@echo "... commands/ls.i"
 	@echo "... commands/ls.s"

@@ -11,6 +11,8 @@ commandHandler.h
 /mnt/e/OS/A2/shell/commandHandler.h
 commands/pinfo.h
 /mnt/e/OS/A2/shell/commands/pinfo.h
+commands/history.h
+/mnt/e/OS/A2/shell/commands/history.h
 
 /mnt/e/OS/A2/shell/commandHandler.h
 utils/shellStateDef.h
@@ -68,6 +70,18 @@ generalCommand.h
 ../utils/shellStateDef.h
 /mnt/e/OS/A2/shell/utils/shellStateDef.h
 
+/mnt/e/OS/A2/shell/commands/history.c
+stdlib.h
+-
+stdio.h
+-
+history.h
+/mnt/e/OS/A2/shell/commands/history.h
+
+/mnt/e/OS/A2/shell/commands/history.h
+../utils/shellStateDef.h
+/mnt/e/OS/A2/shell/utils/shellStateDef.h
+
 /mnt/e/OS/A2/shell/commands/ls.c
 time.h
 -
@@ -113,6 +127,8 @@ utils/inputHandler.h
 /mnt/e/OS/A2/shell/utils/inputHandler.h
 commandHandler.h
 /mnt/e/OS/A2/shell/commandHandler.h
+commands/history.h
+/mnt/e/OS/A2/shell/commands/history.h
 
 /mnt/e/OS/A2/shell/utils/inputHandler.c
 memory.h

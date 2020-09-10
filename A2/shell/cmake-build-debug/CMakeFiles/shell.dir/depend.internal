@@ -7,6 +7,7 @@ CMakeFiles/shell.dir/commandHandler.c.o
  /mnt/e/OS/A2/shell/commands/cd.h
  /mnt/e/OS/A2/shell/commands/echo.h
  /mnt/e/OS/A2/shell/commands/generalCommand.h
+ /mnt/e/OS/A2/shell/commands/history.h
  /mnt/e/OS/A2/shell/commands/ls.h
  /mnt/e/OS/A2/shell/commands/pinfo.h
  /mnt/e/OS/A2/shell/utils/shellStateDef.h
@@ -22,6 +23,10 @@ CMakeFiles/shell.dir/commands/generalCommand.c.o
  /mnt/e/OS/A2/shell/commands/generalCommand.c
  /mnt/e/OS/A2/shell/commands/generalCommand.h
  /mnt/e/OS/A2/shell/utils/shellStateDef.h
+CMakeFiles/shell.dir/commands/history.c.o
+ /mnt/e/OS/A2/shell/commands/history.c
+ /mnt/e/OS/A2/shell/commands/history.h
+ /mnt/e/OS/A2/shell/utils/shellStateDef.h
 CMakeFiles/shell.dir/commands/ls.c.o
  /mnt/e/OS/A2/shell/commands/ls.c
  /mnt/e/OS/A2/shell/commands/ls.h
@@ -35,6 +40,7 @@ CMakeFiles/shell.dir/main.c.o
  /mnt/e/OS/A2/shell/commands/cd.h
  /mnt/e/OS/A2/shell/commands/echo.h
  /mnt/e/OS/A2/shell/commands/generalCommand.h
+ /mnt/e/OS/A2/shell/commands/history.h
  /mnt/e/OS/A2/shell/commands/ls.h
  /mnt/e/OS/A2/shell/main.c
  /mnt/e/OS/A2/shell/utils/inputHandler.h

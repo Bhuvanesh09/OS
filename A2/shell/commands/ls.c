@@ -32,6 +32,8 @@ void resolveFlags(char *option, int *flagL, int *flagA){
     }
     return;
 }
+
+void resolveDirEntry(struct dirent *dirEntry, int flagL);
 void resolveDirectory(struct shellState *currentState, char *arg, char *directory, int flagA, int flagL){
     if(strcmp(arg, "~") == 0){
         strcpy(directory, currentState->homePath);
@@ -44,7 +46,6 @@ void resolveDirectory(struct shellState *currentState, char *arg, char *director
     DIR *dirInstance = opendir(directory);
     if(dirInstance == NULL){
         perror(directory);
-        return -1;
     }
     DirEntry = readdir(dirInstance);
     while(DirEntry){
@@ -67,8 +68,9 @@ void resolveDirEntry(struct dirent *dirEntry, int flagL){
     struct stat statObject;
     stat(dirEntry->d_name, &statObject);
 
-    char *permission = (char *) malloc(sizeof(char) * 10);
+    char *permission = (char *) malloc(sizeof(char) * 11);
     strcpy(permission, "");
+    strcat(permission, S_ISDIR(statObject.st_mode) ? "d" : "-");
     strcat(permission, statObject.st_mode & S_IRUSR ? "r" : "-");
     strcat(permission, statObject.st_mode & S_IWUSR ? "w" : "-");
     strcat(permission, statObject.st_mode & S_IXUSR ? "x" : "-");
@@ -82,24 +84,21 @@ void resolveDirEntry(struct dirent *dirEntry, int flagL){
     char *timeMod = ctime(&statObject.st_mtime);
     timeMod[strlen(timeMod) - 1] = ' ';
     timeMod += 4;
-    printf("%10s %d %s %s %s %s\n", permission, (int)statObject.st_nlink, getUsername(statObject.st_uid), getGroupName(statObject.st_gid),timeMod,  dirEntry->d_name) ;
+    printf("%11s %d %s %s %s %s\n", permission, (int)statObject.st_nlink, getUsername(statObject.st_uid), getGroupName(statObject.st_gid),timeMod,  dirEntry->d_name) ;
 }
 int ls(struct shellState *currentState, char **commandArray, int numParts){
     int flagA = 0, flagL = 0;
-    char *directory = (char *) malloc(sizeof(char) * 1000);
+    char *directory;
     directory = currentState->currentPath;
     for(int i=1; i<numParts; i++){
         if(commandArray[i][0] == '-'){
             resolveFlags(commandArray[i], &flagL, &flagA);
             continue;
-        }else {
-//            resolveDirectory(currentState, commandArray[i], directory);
         }
     }
     int displayedOrNot = 0;
     for(int i=1; i<numParts; i++){
         if(commandArray[i][0] == '-'){
-//            resolveFlags(commandArray[i], &flagL, &flagA);
             continue;
         }else {
             displayedOrNot = 1;

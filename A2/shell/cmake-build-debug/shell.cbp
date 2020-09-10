@@ -102,6 +102,12 @@
 		<Unit filename="/mnt/e/OS/A2/shell/commands/generalCommand.h">
 			<Option target="shell"/>
 		</Unit>
+		<Unit filename="/mnt/e/OS/A2/shell/commands/history.c">
+			<Option target="shell"/>
+		</Unit>
+		<Unit filename="/mnt/e/OS/A2/shell/commands/history.h">
+			<Option target="shell"/>
+		</Unit>
 		<Unit filename="/mnt/e/OS/A2/shell/commands/ls.c">
 			<Option target="shell"/>
 		</Unit>

@@ -6,7 +6,8 @@
 #include <unistd.h>
 #include <stdio.h>
 #include "shellStateDef.h"
-
+#define ANSI_COLOR_GREEN   "\x1b[92m"
+#define ANSI_COLOR_RESET   "\x1b[0m"
 
 void updateShellState( struct shellState *state){
     state->user = getenv("USER");
@@ -21,7 +22,7 @@ void setHomePath(struct shellState *state){
 }
 
 void printShellState(struct  shellState *state){
-    printf("<%s@%s:%s >", state->user, state->hostname, relativePath(state));
+    printf(ANSI_COLOR_GREEN "<%s@%s:%s>" ANSI_COLOR_RESET, state->user, state->hostname, relativePath(state));
     fflush(stdout);
 };
 

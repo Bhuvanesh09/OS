@@ -1,12 +1,4 @@
 20
-ls
-ls ..
-exit
-exit
-exit
-history
-ls
-ls -l
 ls -a
 ls -la
 exit
@@ -18,4 +10,12 @@ ls
 ls -l
 ls -la
 ls
+exit
+pinfo
+out
+ls
+a.out
+ls
+exit
+exit
 exit
