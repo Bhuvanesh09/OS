@@ -56,3 +56,5 @@ void handlePiping(struct shellState *currentShellState, char *rawCommand){
 
     return;
 }
+
+
