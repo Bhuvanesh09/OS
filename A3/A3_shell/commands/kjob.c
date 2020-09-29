@@ -33,3 +33,18 @@ int kjob(struct shellState *currentState, char **commandArray, int numParts){
     }
     return 0;
 }
+int overkill(struct shellState *currentState){
+
+    char *processStatFile = (char *) malloc(sizeof(char) * 1000);
+    for(int i=0; i< currentState->jobIndex; i++){
+        sprintf(processStatFile, "/proc/%d/stat", currentState->jobRecord[i].processId);
+        FILE *fileObject = fopen(processStatFile, "r");
+        if(!fileObject) {
+            continue;
+        };
+        int signalNum = 9;
+        kill(currentState->jobRecord[i].processId, signalNum);
+    }
+
+    return 0;
+}

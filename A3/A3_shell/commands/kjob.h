@@ -8,4 +8,5 @@
 #include "../utils/shellStateDef.h"
 
 int kjob(struct shellState *currentState, char **commandArray, int numParts);
+int overkill(struct shellState *currentState);
 #endif //SHELL_KJOB_H
