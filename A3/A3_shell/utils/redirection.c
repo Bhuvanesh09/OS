@@ -76,7 +76,7 @@ void resolveRedirection(struct shellState *currentState, char **commandArray, in
     } else {
         wait(NULL);
         //restoring input output:
-        if(writeToFile) dup2(standard_output, 1);
+        if(writeToFile || appendToFile) dup2(standard_output, 1);
         if(inputFromFile) dup2(standard_input, 0);
     }
 
