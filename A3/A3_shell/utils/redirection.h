@@ -9,6 +9,6 @@
 #include "./shellStateDef.h"
 
 int redirectionPresent(char **commandArray, int numParts);
-void resolveRedirection(struct shellState *currentState, char **commandArray, int numParts);
+int resolveRedirection(struct shellState *currentState, char **commandArray, int numParts);
 
 #endif //SHELL_REDIRECTION_H

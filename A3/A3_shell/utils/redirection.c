@@ -17,7 +17,7 @@ int redirectionPresent(char **commandArray, int numParts){
     return 0;
 }
 
-void resolveRedirection(struct shellState *currentState, char **commandArray, int numParts){
+int resolveRedirection(struct shellState *currentState, char **commandArray, int numParts){
     int writeToFile = 0, appendToFile = 0, inputFromFile = 0, fileObjectIn, fileObjectOut;
     char *outFile = (char *) malloc(sizeof(char) * 1000);
     char *inFile = (char *) malloc(sizeof(char) * 1000);
@@ -50,7 +50,7 @@ void resolveRedirection(struct shellState *currentState, char **commandArray, in
        fileObjectOut = open(outFile,O_WRONLY | O_CREAT | trOrApp,  0644);
        if(fileObjectOut < 0) {
            perror("Output file error; ");
-           return;
+           return 1;
        }
        dup2(fileObjectOut, 1);
     }
@@ -59,7 +59,7 @@ void resolveRedirection(struct shellState *currentState, char **commandArray, in
         fileObjectIn = open(inFile,O_RDONLY, 0644);
         if(fileObjectIn < 0) {
             perror("Input file error; ");
-            return;
+            return 1;
         }
         dup2(fileObjectIn, 0);
     }
@@ -74,10 +74,14 @@ void resolveRedirection(struct shellState *currentState, char **commandArray, in
         if (execvp(commandArray[0], commandArray) < 0) exit(1);
         exit(0);
     } else {
-        wait(NULL);
+        int stat ;
+        wait(&stat);
         //restoring input output:
         if(writeToFile || appendToFile) dup2(standard_output, 1);
         if(inputFromFile) dup2(standard_input, 0);
+        if(stat != 0) perror("Some Error occured");
+        return stat;
+
     }
 
 }

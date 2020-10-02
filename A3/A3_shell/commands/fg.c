@@ -42,6 +42,6 @@ int fg(struct shellState *currentState, char **commandArray, int numParts){
     signal(SIGTTOU, SIG_IGN); // after wait, the current process tries to write to terminal which causes error.
     tcsetpgrp(0,getpid()); //adding the current process back to the process group
     signal(SIGTTOU,SIG_DFL); // Now we need default handelling of the error ;
-
+    return 0;
 
 }

@@ -24,7 +24,7 @@ struct shellState{
 
 
 void updateShellState(struct shellState *state);
-void printShellState(struct shellState *state);
+void printShellState(struct shellState *state, int lastStat);
 void setHomePath(struct shellState *state);
 char *relativePath(struct shellState *state);
 #endif //SHELL_SHELLSTATEDEF_H

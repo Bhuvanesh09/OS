@@ -12,13 +12,15 @@ int main() {
     signal(SIGTSTP, decoyFunc);
     struct shellState *currentShellState = (struct shellState*) malloc(sizeof(struct shellState));
     currentShellState->jobIndex = 0;
+    int lastStat = -10;
     setHomePath(currentShellState);
     currentShellState->lastPath = currentShellState->homePath;
 #pragma clang diagnostic push
 #pragma ide diagnostic ignored "EndlessLoop"
     while(1) {
         updateShellState(currentShellState);
-        printShellState(currentShellState);
+        printShellState(currentShellState, lastStat);
+        lastStat = -10;
         char *currentCommand = (char *) malloc(sizeof(char) * 100);
         char **commandPartArray = (char *)malloc(sizeof(int) * 100);
         updateCommand(currentCommand);
@@ -28,7 +30,7 @@ int main() {
         if(checkHasPiping(commandPartArray, commandPartSize)){
             handlePiping(currentShellState, currentCommand);
         }
-        else handleCommand(currentShellState, commandPartArray, commandPartSize, currentCommand);
+        else lastStat = handleCommand(currentShellState, commandPartArray, commandPartSize, currentCommand);
 
     }
 #pragma clang diagnostic pop

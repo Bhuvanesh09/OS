@@ -29,7 +29,10 @@ int pinfo(struct shellState *currentState, char **commandArray, int numParts){
     strcat(workingPath, "/stat");
 
     workingFile = fopen(workingPath, "r");
-    if(!workingFile) perror("Couldn't gather stat info :( ");
+    if(!workingFile) {
+        perror("Couldn't gather stat info :( ");
+        return 1;
+    }
 
     fscanf(workingFile, "%lld", &pid);
     fscanf(workingFile, "%s", garbageString);
@@ -60,7 +63,10 @@ int pinfo(struct shellState *currentState, char **commandArray, int numParts){
     garbageString = (char *)malloc(sizeof(char)*1000);
     retStatus = readlink(workingPath, garbageString, 1000);
 
-    if(retStatus<0) perror("Could not find the executable sorry :(    ");
+    if(retStatus<0) {
+        perror("Could not find the executable sorry :(    ");
+        return 1;
+    }
 
     printf("Executable Path -- %s\n", garbageString);
 

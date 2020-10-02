@@ -21,7 +21,10 @@ void setHomePath(struct shellState *state){
     getcwd(state->homePath, 1000);
 }
 
-void printShellState(struct  shellState *state){
+void printShellState(struct  shellState *state,int lastStat){
+    if(lastStat != -10){
+        printf("%s", lastStat == 0 ? ":')" : ":'(" );
+    }
     printf(ANSI_COLOR_GREEN "<%s@%s:%s>" ANSI_COLOR_RESET, state->user, state->hostname, relativePath(state));
     fflush(stdout);
 };

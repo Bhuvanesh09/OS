@@ -7,7 +7,7 @@
 
 int cd(struct shellState *currentState, char **commandArray, int numParts){
     if(strcmp(commandArray[1]," ")==0 || strcmp(commandArray[1], "")==0 || strcmp(commandArray[1], ".")==0) {
-        return 1;
+        return 0;
     }
     char *lastPath = currentState->lastPath;
     currentState->lastPath = currentState -> currentPath;
@@ -19,7 +19,7 @@ int cd(struct shellState *currentState, char **commandArray, int numParts){
         }
         else {
             updateShellState(currentState);
-            return 1;
+            return 0;
         }
     }
     if(commandArray[1][0] == '~'){
@@ -33,7 +33,7 @@ int cd(struct shellState *currentState, char **commandArray, int numParts){
         }
         else {
             updateShellState(currentState);
-            return 1;
+            return 0;
         }
     }else {
         int suc = chdir(commandArray[1]);
@@ -42,7 +42,8 @@ int cd(struct shellState *currentState, char **commandArray, int numParts){
             return -1;
         }else {
             updateShellState(currentState);
-            return 1;
+            return 0;
         }
     }
+    return 0;
 }

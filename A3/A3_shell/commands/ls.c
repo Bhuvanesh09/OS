@@ -109,5 +109,5 @@ int ls(struct shellState *currentState, char **commandArray, int numParts){
 
     if (!displayedOrNot) resolveDirectory(currentState, currentState->currentPath, directory,flagA, flagL);
 
-   return 1;
+   return 0;
 }

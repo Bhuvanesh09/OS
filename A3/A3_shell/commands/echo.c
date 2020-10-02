@@ -11,4 +11,5 @@ int echo(struct shellState * state, char **commandArray, int numParts, char *raw
     char *part = strtok(stringCopy, delim);
     part = strtok(NULL, delim);
     dprintf(1, "%s", rawCommand + (part-stringCopy));
+    return 0;
 }

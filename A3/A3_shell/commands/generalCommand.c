@@ -37,7 +37,7 @@ int executeGeneralCommand(struct shellState *currentState, char ** commandArray,
     if(pid<0){
 
         perror("Couldn't create a child process. :(");
-        return -1;
+        return 1;
     }
    commandArray[nparts] = NULL;
    if(pid == 0) {
@@ -71,6 +71,7 @@ int executeGeneralCommand(struct shellState *currentState, char ** commandArray,
         signal(SIGTTOU, SIG_IGN);
         tcsetpgrp(0, getpid());
         signal(SIGTTOU, SIG_DFL);
+        return stat;
    }
 
    return 0;

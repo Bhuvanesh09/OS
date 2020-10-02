@@ -47,11 +47,12 @@ void handlePiping(struct shellState *currentShellState, char *rawCommand){
     }
 
     dup2(standard_output, 1);
-
+    int stat;
     numParts = splitStringOnSpaces(pipedCommands[numCommands-1],commandParts);
-    handleCommand(currentShellState, commandParts, numParts, pipedCommands[numCommands-1]);
+    stat = handleCommand(currentShellState, commandParts, numParts, pipedCommands[numCommands-1]);
     dup2(standard_input, 0);
 
+    printf("%s", stat == 0 ? ":')" : ":'(");
 
 
     return;
