@@ -8,6 +8,10 @@
 void updateCommand(char *commandString){
     size_t  size = 1000;
     getline(&commandString, &size, stdin);
+    if(commandString[0] == '\000') {
+        printf("\nThank you for trying out. :) Bye Bye \n");
+        exit(0);
+    }
 }
 
 int splitStringOnSpaces(char *string, char *parsedArray[]){
