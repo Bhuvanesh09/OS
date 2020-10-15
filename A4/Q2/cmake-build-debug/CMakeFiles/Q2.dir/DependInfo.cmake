@@ -5,6 +5,9 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
   "/mnt/e/OS/A4/Q2/main.c" "/mnt/e/OS/A4/Q2/cmake-build-debug/CMakeFiles/Q2.dir/main.c.o"
+  "/mnt/e/OS/A4/Q2/pharma.c" "/mnt/e/OS/A4/Q2/cmake-build-debug/CMakeFiles/Q2.dir/pharma.c.o"
+  "/mnt/e/OS/A4/Q2/student.c" "/mnt/e/OS/A4/Q2/cmake-build-debug/CMakeFiles/Q2.dir/student.c.o"
+  "/mnt/e/OS/A4/Q2/zone.c" "/mnt/e/OS/A4/Q2/cmake-build-debug/CMakeFiles/Q2.dir/zone.c.o"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
 

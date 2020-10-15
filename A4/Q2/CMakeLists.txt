@@ -3,4 +3,4 @@ project(Q2 C)
 
 set(CMAKE_C_STANDARD 11)
 
-add_executable(Q2 main.c cmake-build-debug/main.h main.h)
+add_executable(Q2 main.c cmake-build-debug/main.h main.h student.c student.h zone.c zone.h pharma.c pharma.h)

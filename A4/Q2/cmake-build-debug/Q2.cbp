@@ -87,6 +87,24 @@
 		<Unit filename="/mnt/e/OS/A4/Q2/main.h">
 			<Option target="Q2"/>
 		</Unit>
+		<Unit filename="/mnt/e/OS/A4/Q2/pharma.c">
+			<Option target="Q2"/>
+		</Unit>
+		<Unit filename="/mnt/e/OS/A4/Q2/pharma.h">
+			<Option target="Q2"/>
+		</Unit>
+		<Unit filename="/mnt/e/OS/A4/Q2/student.c">
+			<Option target="Q2"/>
+		</Unit>
+		<Unit filename="/mnt/e/OS/A4/Q2/student.h">
+			<Option target="Q2"/>
+		</Unit>
+		<Unit filename="/mnt/e/OS/A4/Q2/zone.c">
+			<Option target="Q2"/>
+		</Unit>
+		<Unit filename="/mnt/e/OS/A4/Q2/zone.h">
+			<Option target="Q2"/>
+		</Unit>
 		<Unit filename="/mnt/e/OS/A4/Q2/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>

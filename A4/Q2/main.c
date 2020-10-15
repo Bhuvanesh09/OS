@@ -1,5 +1,8 @@
 #include <stdio.h>
 #include "main.h"
+int min(int a, int b){
+    return a < b ? a : b ;
+}
 void *shareMem(size_t size) {
     key_t mem_key = IPC_PRIVATE;
     // get shared memory of this much size and with this private key
@@ -8,15 +11,18 @@ void *shareMem(size_t size) {
     // attach the address space of shared memory to myself (callee)
     return (void *)shmat(shm_id, NULL, 0);
 }
+int randomCustom(int l, int r) {
+    return rand() % (r - l + 1) + l;
+}
 int main() {
     srand(time(0));
 
     printf("Kindly enter number of companies, zones, and students.\n");
     scanf("%d %d %d", &num_companies, &num_zones, &num_students);
-
+    studentsLeft = num_students;
     studentArray = (struct student **) shareMem(sizeof(struct student *) * num_students);
     zonesArray = (struct zone **) shareMem(sizeof(struct zone *) * num_zones);
-    pharmaArray = (struct zone **) shareMem(sizeof(struct zone *) * num_companies);
+    pharmaArray = (struct pharma **) shareMem(sizeof(struct pharma *) * num_companies);
 
     zoneMutexes = (pthread_mutex_t *) shareMem(sizeof(pthread_mutex_t) * num_zones);
 
@@ -27,19 +33,25 @@ int main() {
     for(int i=0; i < num_zones; i++){
         zonesArray[i] = (struct zone *) shareMem(sizeof(struct zone));
         zonesArray[i] -> id = i;
-
         pthread_mutex_init(&zoneMutexes[i], NULL);
     }
 
     for(int i=0; i < num_students; i++){
         studentArray[i] = (struct student *) shareMem(sizeof(struct student));
         studentArray[i]->id = i;
-
+        studentArray[i]->progressState = CANDIDATE;
+        studentArray[i]->numTries = 0;
     }
+
     for(int i=0; i < num_companies; i++){
         pharmaArray[i] = (struct pharma *) shareMem(sizeof(struct pharma));
         pharmaArray[i]->id = i ;
-
+        pharmaArray[i]->numBatchesProduced = randomCustom(1,5);
+        pharmaArray[i]->batchStrength = randomCustom(10,20);
+        scanf("%f",&(pharmaArray[i]->probSuccess));
+        pharmaArray[i]->productionTime = randomCustom(2,5);
     }
+
+
     return 0;
 }

@@ -37,12 +37,14 @@ struct zone {
     int id;
     int vaccinesLeft;
     int numSlots;
+    int companyId;
     int occupiedSlots;
     int *studentIds;
 };
 
 enum State {
     CANDIDATE,
+    WAITING,
     ADMITTED,
     FAILED
 };
@@ -56,10 +58,12 @@ struct student {
 
 pthread_mutex_t *zoneMutexes;
 
-int num_companies, num_zones, num_students;
+int num_companies, num_zones, num_students, studentsLeft;
 
 struct student **studentArray;
 struct zone **zonesArray;
 struct pharma **pharmaArray;
 
+int min(int a, int b);
+int randomCustom(int l, int r);
 #endif //Q2_MAIN_H

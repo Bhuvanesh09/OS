@@ -150,6 +150,87 @@ main.c.s:
 	$(MAKE) -f CMakeFiles/Q2.dir/build.make CMakeFiles/Q2.dir/main.c.s
 .PHONY : main.c.s
 
+pharma.o: pharma.c.o
+
+.PHONY : pharma.o
+
+# target to build an object file
+pharma.c.o:
+	$(MAKE) -f CMakeFiles/Q2.dir/build.make CMakeFiles/Q2.dir/pharma.c.o
+.PHONY : pharma.c.o
+
+pharma.i: pharma.c.i
+
+.PHONY : pharma.i
+
+# target to preprocess a source file
+pharma.c.i:
+	$(MAKE) -f CMakeFiles/Q2.dir/build.make CMakeFiles/Q2.dir/pharma.c.i
+.PHONY : pharma.c.i
+
+pharma.s: pharma.c.s
+
+.PHONY : pharma.s
+
+# target to generate assembly for a file
+pharma.c.s:
+	$(MAKE) -f CMakeFiles/Q2.dir/build.make CMakeFiles/Q2.dir/pharma.c.s
+.PHONY : pharma.c.s
+
+student.o: student.c.o
+
+.PHONY : student.o
+
+# target to build an object file
+student.c.o:
+	$(MAKE) -f CMakeFiles/Q2.dir/build.make CMakeFiles/Q2.dir/student.c.o
+.PHONY : student.c.o
+
+student.i: student.c.i
+
+.PHONY : student.i
+
+# target to preprocess a source file
+student.c.i:
+	$(MAKE) -f CMakeFiles/Q2.dir/build.make CMakeFiles/Q2.dir/student.c.i
+.PHONY : student.c.i
+
+student.s: student.c.s
+
+.PHONY : student.s
+
+# target to generate assembly for a file
+student.c.s:
+	$(MAKE) -f CMakeFiles/Q2.dir/build.make CMakeFiles/Q2.dir/student.c.s
+.PHONY : student.c.s
+
+zone.o: zone.c.o
+
+.PHONY : zone.o
+
+# target to build an object file
+zone.c.o:
+	$(MAKE) -f CMakeFiles/Q2.dir/build.make CMakeFiles/Q2.dir/zone.c.o
+.PHONY : zone.c.o
+
+zone.i: zone.c.i
+
+.PHONY : zone.i
+
+# target to preprocess a source file
+zone.c.i:
+	$(MAKE) -f CMakeFiles/Q2.dir/build.make CMakeFiles/Q2.dir/zone.c.i
+.PHONY : zone.c.i
+
+zone.s: zone.c.s
+
+.PHONY : zone.s
+
+# target to generate assembly for a file
+zone.c.s:
+	$(MAKE) -f CMakeFiles/Q2.dir/build.make CMakeFiles/Q2.dir/zone.c.s
+.PHONY : zone.c.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -162,6 +243,15 @@ help:
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... pharma.o"
+	@echo "... pharma.i"
+	@echo "... pharma.s"
+	@echo "... student.o"
+	@echo "... student.i"
+	@echo "... student.s"
+	@echo "... zone.o"
+	@echo "... zone.i"
+	@echo "... zone.s"
 .PHONY : help
 
 
