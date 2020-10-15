@@ -61,7 +61,7 @@ struct student {
 
 pthread_mutex_t *zoneMutexes;
 pthread_mutex_t totalStuds;
-int num_companies, num_zones, num_students, studentsLeft;
+int num_companies, num_zones, num_students, studentsLeft, decoyLeft ;
 
 struct student **studentArray;
 struct zone **zonesArray;
