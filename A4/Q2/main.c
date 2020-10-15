@@ -29,6 +29,7 @@ int main() {
         scanf("%f", &probs[i]);
     }
     studentsLeft = num_students;
+    decoyLeft = num_students;
     studentArray = (struct student **) shareMem(sizeof(struct student *) * num_students);
     zonesArray = (struct zone **) shareMem(sizeof(struct zone *) * num_zones);
     pharmaArray = (struct pharma **) shareMem(sizeof(struct pharma *) * num_companies);

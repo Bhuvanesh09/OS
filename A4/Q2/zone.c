@@ -18,8 +18,7 @@ int performTest(int companyId,int zoneId, int studId){
         studentsLeft -= 1 ;
     }
     else {
-
-        studentArray[studId]->numTries += 1;
+       studentArray[studId]->numTries += 1;
         printf(COL_RED "Student %d has tested negative for antibodies. (ROUND : %d) :( \n" COL_RESET, studId, studentArray[studId]->numTries);
         if(studentArray[studId]->numTries >= 3){
             studentArray[studId]->progressState = FAILED;
@@ -27,6 +26,9 @@ int performTest(int companyId,int zoneId, int studId){
             studentsLeft -= 1 ;
         }
         else {
+            pthread_mutex_lock(&totalStuds);
+            decoyLeft++;
+            pthread_mutex_unlock(&totalStuds);
             studentArray[studId]->progressState = CANDIDATE;
             printf(COL_RED "Student %d is waiting to be allocated a slot on a Vaccination Zone\n" COL_RESET, studId);
         }
@@ -37,9 +39,8 @@ int performTest(int companyId,int zoneId, int studId){
 void * zoneLive(void * input){
     int zoneId = *(int *) input;
     while(studentsLeft > 0){
-        delay(3);
+        delay(2);
         pthread_mutex_lock(&zoneMutexes[zoneId]);
-        pthread_mutex_lock(&totalStuds);
 //        printf(COL_CYAN "zone live %d enter\n" COL_RESET, zoneId);
 
         if(zonesArray[zoneId]->numSlots - zonesArray[zoneId]->occupiedSlots == 0 && zonesArray[zoneId]->numSlots != 0){
@@ -55,12 +56,19 @@ void * zoneLive(void * input){
         }
         else if(zonesArray[zoneId] -> numSlots == 0 && zonesArray[zoneId]->vaccinesLeft != 0){
             // we can call another group of studs for vaccination. :)
-            printf("Students left : %d\n", studentsLeft);
-            zonesArray[zoneId]->numSlots = min(8, min(studentsLeft, zonesArray[zoneId]->vaccinesLeft));
+           if(decoyLeft == 0){
+                pthread_mutex_unlock(&zoneMutexes[zoneId]);
+                continue;
+            }
+            pthread_mutex_lock(&totalStuds);
+            printf("Students left : %d , Decoy Left : %d\n", studentsLeft, decoyLeft);
+            zonesArray[zoneId]->numSlots = min(8, min(decoyLeft, zonesArray[zoneId]->vaccinesLeft));
             zonesArray[zoneId]->vaccinesLeft -= zonesArray[zoneId]->numSlots;
-           zonesArray[zoneId]->studentIds = (int *) malloc(sizeof(int) * zonesArray[zoneId]->numSlots);
+            zonesArray[zoneId]->studentIds = (int *) malloc(sizeof(int) * zonesArray[zoneId]->numSlots);
             zonesArray[zoneId]->occupiedSlots = 0;
-            printf(COL_BLUE "Vaccination zone %d is ready to vaccinate having %d slots :)\n" COL_RESET, zoneId, zonesArray[zoneId]->numSlots);
+            decoyLeft -= zonesArray[zoneId]->numSlots ;
+            pthread_mutex_unlock(&totalStuds);
+           printf(COL_BLUE "Vaccination zone %d is ready to vaccinate having %d slots :)\n" COL_RESET, zoneId, zonesArray[zoneId]->numSlots);
             if(zonesArray[zoneId]-> vaccinesLeft == 0){
                 printf(COL_BLUE "Vaccination zone %d has ran out of vaccines for the next phase.\n" COL_RESET, zoneId);
             }
@@ -69,7 +77,6 @@ void * zoneLive(void * input){
         }
 
 //        printf(COL_CYAN "zone live %d exit\n" COL_RESET, zoneId);
-        pthread_mutex_unlock(&totalStuds);
         pthread_mutex_unlock(&zoneMutexes[zoneId]);
     }
 }
