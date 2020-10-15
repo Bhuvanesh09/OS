@@ -1,1 +1,1 @@
-/usr/bin/cc -g  -rdynamic CMakeFiles/Q2.dir/main.c.o CMakeFiles/Q2.dir/student.c.o CMakeFiles/Q2.dir/zone.c.o CMakeFiles/Q2.dir/pharma.c.o  -o Q2 
+/usr/bin/cc  -pthread -g  -rdynamic CMakeFiles/Q2.dir/main.o CMakeFiles/Q2.dir/student.o CMakeFiles/Q2.dir/zone.o CMakeFiles/Q2.dir/pharma.o  -o Q2 

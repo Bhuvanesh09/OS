@@ -29,7 +29,7 @@
 			</Target>
 			<Target title="Q2">
 				<Option output="/mnt/e/OS/A4/Q2/cmake-build-debug/Q2" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/mnt/e/OS/A4/Q2/cmake-build-debug"/>
+				<Option working_dir=""/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -49,7 +49,7 @@
 			</Target>
 			<Target title="Q2/fast">
 				<Option output="/mnt/e/OS/A4/Q2/cmake-build-debug/Q2" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/mnt/e/OS/A4/Q2/cmake-build-debug"/>
+				<Option working_dir=""/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -78,9 +78,6 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/mnt/e/OS/A4/Q2/cmake-build-debug/main.h">
-			<Option target="Q2"/>
-		</Unit>
 		<Unit filename="/mnt/e/OS/A4/Q2/main.c">
 			<Option target="Q2"/>
 		</Unit>

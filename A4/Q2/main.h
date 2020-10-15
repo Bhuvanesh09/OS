@@ -16,6 +16,9 @@
 #include <time.h>
 #include <unistd.h>
 #include <sys/shm.h>
+#include "student.h"
+#include "zone.h"
+#include "pharma.h"
 
 #define COL_RESET "\x1B[0m"
 #define COL_RED "\x1B[31m"
@@ -57,13 +60,14 @@ struct student {
 
 
 pthread_mutex_t *zoneMutexes;
-
+pthread_mutex_t totalStuds;
 int num_companies, num_zones, num_students, studentsLeft;
 
 struct student **studentArray;
 struct zone **zonesArray;
 struct pharma **pharmaArray;
 
+void delay(int time);
 int min(int a, int b);
 int randomCustom(int l, int r);
 #endif //Q2_MAIN_H

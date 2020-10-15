@@ -57,116 +57,116 @@ include CMakeFiles/Q2.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/Q2.dir/flags.make
 
-CMakeFiles/Q2.dir/main.c.o: CMakeFiles/Q2.dir/flags.make
-CMakeFiles/Q2.dir/main.c.o: ../main.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/e/OS/A4/Q2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/Q2.dir/main.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Q2.dir/main.c.o   -c /mnt/e/OS/A4/Q2/main.c
+CMakeFiles/Q2.dir/main.o: CMakeFiles/Q2.dir/flags.make
+CMakeFiles/Q2.dir/main.o: ../main.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/e/OS/A4/Q2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/Q2.dir/main.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Q2.dir/main.o   -c /mnt/e/OS/A4/Q2/main.c
 
-CMakeFiles/Q2.dir/main.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Q2.dir/main.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /mnt/e/OS/A4/Q2/main.c > CMakeFiles/Q2.dir/main.c.i
+CMakeFiles/Q2.dir/main.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Q2.dir/main.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /mnt/e/OS/A4/Q2/main.c > CMakeFiles/Q2.dir/main.i
 
-CMakeFiles/Q2.dir/main.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Q2.dir/main.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /mnt/e/OS/A4/Q2/main.c -o CMakeFiles/Q2.dir/main.c.s
+CMakeFiles/Q2.dir/main.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Q2.dir/main.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /mnt/e/OS/A4/Q2/main.c -o CMakeFiles/Q2.dir/main.s
 
-CMakeFiles/Q2.dir/main.c.o.requires:
+CMakeFiles/Q2.dir/main.o.requires:
 
-.PHONY : CMakeFiles/Q2.dir/main.c.o.requires
+.PHONY : CMakeFiles/Q2.dir/main.o.requires
 
-CMakeFiles/Q2.dir/main.c.o.provides: CMakeFiles/Q2.dir/main.c.o.requires
-	$(MAKE) -f CMakeFiles/Q2.dir/build.make CMakeFiles/Q2.dir/main.c.o.provides.build
-.PHONY : CMakeFiles/Q2.dir/main.c.o.provides
+CMakeFiles/Q2.dir/main.o.provides: CMakeFiles/Q2.dir/main.o.requires
+	$(MAKE) -f CMakeFiles/Q2.dir/build.make CMakeFiles/Q2.dir/main.o.provides.build
+.PHONY : CMakeFiles/Q2.dir/main.o.provides
 
-CMakeFiles/Q2.dir/main.c.o.provides.build: CMakeFiles/Q2.dir/main.c.o
-
-
-CMakeFiles/Q2.dir/student.c.o: CMakeFiles/Q2.dir/flags.make
-CMakeFiles/Q2.dir/student.c.o: ../student.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/e/OS/A4/Q2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/Q2.dir/student.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Q2.dir/student.c.o   -c /mnt/e/OS/A4/Q2/student.c
-
-CMakeFiles/Q2.dir/student.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Q2.dir/student.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /mnt/e/OS/A4/Q2/student.c > CMakeFiles/Q2.dir/student.c.i
-
-CMakeFiles/Q2.dir/student.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Q2.dir/student.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /mnt/e/OS/A4/Q2/student.c -o CMakeFiles/Q2.dir/student.c.s
-
-CMakeFiles/Q2.dir/student.c.o.requires:
-
-.PHONY : CMakeFiles/Q2.dir/student.c.o.requires
-
-CMakeFiles/Q2.dir/student.c.o.provides: CMakeFiles/Q2.dir/student.c.o.requires
-	$(MAKE) -f CMakeFiles/Q2.dir/build.make CMakeFiles/Q2.dir/student.c.o.provides.build
-.PHONY : CMakeFiles/Q2.dir/student.c.o.provides
-
-CMakeFiles/Q2.dir/student.c.o.provides.build: CMakeFiles/Q2.dir/student.c.o
+CMakeFiles/Q2.dir/main.o.provides.build: CMakeFiles/Q2.dir/main.o
 
 
-CMakeFiles/Q2.dir/zone.c.o: CMakeFiles/Q2.dir/flags.make
-CMakeFiles/Q2.dir/zone.c.o: ../zone.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/e/OS/A4/Q2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/Q2.dir/zone.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Q2.dir/zone.c.o   -c /mnt/e/OS/A4/Q2/zone.c
+CMakeFiles/Q2.dir/student.o: CMakeFiles/Q2.dir/flags.make
+CMakeFiles/Q2.dir/student.o: ../student.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/e/OS/A4/Q2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/Q2.dir/student.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Q2.dir/student.o   -c /mnt/e/OS/A4/Q2/student.c
 
-CMakeFiles/Q2.dir/zone.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Q2.dir/zone.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /mnt/e/OS/A4/Q2/zone.c > CMakeFiles/Q2.dir/zone.c.i
+CMakeFiles/Q2.dir/student.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Q2.dir/student.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /mnt/e/OS/A4/Q2/student.c > CMakeFiles/Q2.dir/student.i
 
-CMakeFiles/Q2.dir/zone.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Q2.dir/zone.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /mnt/e/OS/A4/Q2/zone.c -o CMakeFiles/Q2.dir/zone.c.s
+CMakeFiles/Q2.dir/student.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Q2.dir/student.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /mnt/e/OS/A4/Q2/student.c -o CMakeFiles/Q2.dir/student.s
 
-CMakeFiles/Q2.dir/zone.c.o.requires:
+CMakeFiles/Q2.dir/student.o.requires:
 
-.PHONY : CMakeFiles/Q2.dir/zone.c.o.requires
+.PHONY : CMakeFiles/Q2.dir/student.o.requires
 
-CMakeFiles/Q2.dir/zone.c.o.provides: CMakeFiles/Q2.dir/zone.c.o.requires
-	$(MAKE) -f CMakeFiles/Q2.dir/build.make CMakeFiles/Q2.dir/zone.c.o.provides.build
-.PHONY : CMakeFiles/Q2.dir/zone.c.o.provides
+CMakeFiles/Q2.dir/student.o.provides: CMakeFiles/Q2.dir/student.o.requires
+	$(MAKE) -f CMakeFiles/Q2.dir/build.make CMakeFiles/Q2.dir/student.o.provides.build
+.PHONY : CMakeFiles/Q2.dir/student.o.provides
 
-CMakeFiles/Q2.dir/zone.c.o.provides.build: CMakeFiles/Q2.dir/zone.c.o
+CMakeFiles/Q2.dir/student.o.provides.build: CMakeFiles/Q2.dir/student.o
 
 
-CMakeFiles/Q2.dir/pharma.c.o: CMakeFiles/Q2.dir/flags.make
-CMakeFiles/Q2.dir/pharma.c.o: ../pharma.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/e/OS/A4/Q2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/Q2.dir/pharma.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Q2.dir/pharma.c.o   -c /mnt/e/OS/A4/Q2/pharma.c
+CMakeFiles/Q2.dir/zone.o: CMakeFiles/Q2.dir/flags.make
+CMakeFiles/Q2.dir/zone.o: ../zone.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/e/OS/A4/Q2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/Q2.dir/zone.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Q2.dir/zone.o   -c /mnt/e/OS/A4/Q2/zone.c
 
-CMakeFiles/Q2.dir/pharma.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Q2.dir/pharma.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /mnt/e/OS/A4/Q2/pharma.c > CMakeFiles/Q2.dir/pharma.c.i
+CMakeFiles/Q2.dir/zone.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Q2.dir/zone.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /mnt/e/OS/A4/Q2/zone.c > CMakeFiles/Q2.dir/zone.i
 
-CMakeFiles/Q2.dir/pharma.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Q2.dir/pharma.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /mnt/e/OS/A4/Q2/pharma.c -o CMakeFiles/Q2.dir/pharma.c.s
+CMakeFiles/Q2.dir/zone.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Q2.dir/zone.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /mnt/e/OS/A4/Q2/zone.c -o CMakeFiles/Q2.dir/zone.s
 
-CMakeFiles/Q2.dir/pharma.c.o.requires:
+CMakeFiles/Q2.dir/zone.o.requires:
 
-.PHONY : CMakeFiles/Q2.dir/pharma.c.o.requires
+.PHONY : CMakeFiles/Q2.dir/zone.o.requires
 
-CMakeFiles/Q2.dir/pharma.c.o.provides: CMakeFiles/Q2.dir/pharma.c.o.requires
-	$(MAKE) -f CMakeFiles/Q2.dir/build.make CMakeFiles/Q2.dir/pharma.c.o.provides.build
-.PHONY : CMakeFiles/Q2.dir/pharma.c.o.provides
+CMakeFiles/Q2.dir/zone.o.provides: CMakeFiles/Q2.dir/zone.o.requires
+	$(MAKE) -f CMakeFiles/Q2.dir/build.make CMakeFiles/Q2.dir/zone.o.provides.build
+.PHONY : CMakeFiles/Q2.dir/zone.o.provides
 
-CMakeFiles/Q2.dir/pharma.c.o.provides.build: CMakeFiles/Q2.dir/pharma.c.o
+CMakeFiles/Q2.dir/zone.o.provides.build: CMakeFiles/Q2.dir/zone.o
+
+
+CMakeFiles/Q2.dir/pharma.o: CMakeFiles/Q2.dir/flags.make
+CMakeFiles/Q2.dir/pharma.o: ../pharma.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/e/OS/A4/Q2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/Q2.dir/pharma.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Q2.dir/pharma.o   -c /mnt/e/OS/A4/Q2/pharma.c
+
+CMakeFiles/Q2.dir/pharma.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Q2.dir/pharma.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /mnt/e/OS/A4/Q2/pharma.c > CMakeFiles/Q2.dir/pharma.i
+
+CMakeFiles/Q2.dir/pharma.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Q2.dir/pharma.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /mnt/e/OS/A4/Q2/pharma.c -o CMakeFiles/Q2.dir/pharma.s
+
+CMakeFiles/Q2.dir/pharma.o.requires:
+
+.PHONY : CMakeFiles/Q2.dir/pharma.o.requires
+
+CMakeFiles/Q2.dir/pharma.o.provides: CMakeFiles/Q2.dir/pharma.o.requires
+	$(MAKE) -f CMakeFiles/Q2.dir/build.make CMakeFiles/Q2.dir/pharma.o.provides.build
+.PHONY : CMakeFiles/Q2.dir/pharma.o.provides
+
+CMakeFiles/Q2.dir/pharma.o.provides.build: CMakeFiles/Q2.dir/pharma.o
 
 
 # Object files for target Q2
 Q2_OBJECTS = \
-"CMakeFiles/Q2.dir/main.c.o" \
-"CMakeFiles/Q2.dir/student.c.o" \
-"CMakeFiles/Q2.dir/zone.c.o" \
-"CMakeFiles/Q2.dir/pharma.c.o"
+"CMakeFiles/Q2.dir/main.o" \
+"CMakeFiles/Q2.dir/student.o" \
+"CMakeFiles/Q2.dir/zone.o" \
+"CMakeFiles/Q2.dir/pharma.o"
 
 # External object files for target Q2
 Q2_EXTERNAL_OBJECTS =
 
-Q2: CMakeFiles/Q2.dir/main.c.o
-Q2: CMakeFiles/Q2.dir/student.c.o
-Q2: CMakeFiles/Q2.dir/zone.c.o
-Q2: CMakeFiles/Q2.dir/pharma.c.o
+Q2: CMakeFiles/Q2.dir/main.o
+Q2: CMakeFiles/Q2.dir/student.o
+Q2: CMakeFiles/Q2.dir/zone.o
+Q2: CMakeFiles/Q2.dir/pharma.o
 Q2: CMakeFiles/Q2.dir/build.make
 Q2: CMakeFiles/Q2.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/mnt/e/OS/A4/Q2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking C executable Q2"
@@ -177,10 +177,10 @@ CMakeFiles/Q2.dir/build: Q2
 
 .PHONY : CMakeFiles/Q2.dir/build
 
-CMakeFiles/Q2.dir/requires: CMakeFiles/Q2.dir/main.c.o.requires
-CMakeFiles/Q2.dir/requires: CMakeFiles/Q2.dir/student.c.o.requires
-CMakeFiles/Q2.dir/requires: CMakeFiles/Q2.dir/zone.c.o.requires
-CMakeFiles/Q2.dir/requires: CMakeFiles/Q2.dir/pharma.c.o.requires
+CMakeFiles/Q2.dir/requires: CMakeFiles/Q2.dir/main.o.requires
+CMakeFiles/Q2.dir/requires: CMakeFiles/Q2.dir/student.o.requires
+CMakeFiles/Q2.dir/requires: CMakeFiles/Q2.dir/zone.o.requires
+CMakeFiles/Q2.dir/requires: CMakeFiles/Q2.dir/pharma.o.requires
 
 .PHONY : CMakeFiles/Q2.dir/requires
 

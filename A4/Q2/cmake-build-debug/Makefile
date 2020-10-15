@@ -123,113 +123,65 @@ Q2/fast:
 	$(MAKE) -f CMakeFiles/Q2.dir/build.make CMakeFiles/Q2.dir/build
 .PHONY : Q2/fast
 
-main.o: main.c.o
-
+# target to build an object file
+main.o:
+	$(MAKE) -f CMakeFiles/Q2.dir/build.make CMakeFiles/Q2.dir/main.o
 .PHONY : main.o
 
-# target to build an object file
-main.c.o:
-	$(MAKE) -f CMakeFiles/Q2.dir/build.make CMakeFiles/Q2.dir/main.c.o
-.PHONY : main.c.o
-
-main.i: main.c.i
-
+# target to preprocess a source file
+main.i:
+	$(MAKE) -f CMakeFiles/Q2.dir/build.make CMakeFiles/Q2.dir/main.i
 .PHONY : main.i
 
-# target to preprocess a source file
-main.c.i:
-	$(MAKE) -f CMakeFiles/Q2.dir/build.make CMakeFiles/Q2.dir/main.c.i
-.PHONY : main.c.i
-
-main.s: main.c.s
-
+# target to generate assembly for a file
+main.s:
+	$(MAKE) -f CMakeFiles/Q2.dir/build.make CMakeFiles/Q2.dir/main.s
 .PHONY : main.s
 
-# target to generate assembly for a file
-main.c.s:
-	$(MAKE) -f CMakeFiles/Q2.dir/build.make CMakeFiles/Q2.dir/main.c.s
-.PHONY : main.c.s
-
-pharma.o: pharma.c.o
-
+# target to build an object file
+pharma.o:
+	$(MAKE) -f CMakeFiles/Q2.dir/build.make CMakeFiles/Q2.dir/pharma.o
 .PHONY : pharma.o
 
-# target to build an object file
-pharma.c.o:
-	$(MAKE) -f CMakeFiles/Q2.dir/build.make CMakeFiles/Q2.dir/pharma.c.o
-.PHONY : pharma.c.o
-
-pharma.i: pharma.c.i
-
+# target to preprocess a source file
+pharma.i:
+	$(MAKE) -f CMakeFiles/Q2.dir/build.make CMakeFiles/Q2.dir/pharma.i
 .PHONY : pharma.i
 
-# target to preprocess a source file
-pharma.c.i:
-	$(MAKE) -f CMakeFiles/Q2.dir/build.make CMakeFiles/Q2.dir/pharma.c.i
-.PHONY : pharma.c.i
-
-pharma.s: pharma.c.s
-
+# target to generate assembly for a file
+pharma.s:
+	$(MAKE) -f CMakeFiles/Q2.dir/build.make CMakeFiles/Q2.dir/pharma.s
 .PHONY : pharma.s
 
-# target to generate assembly for a file
-pharma.c.s:
-	$(MAKE) -f CMakeFiles/Q2.dir/build.make CMakeFiles/Q2.dir/pharma.c.s
-.PHONY : pharma.c.s
-
-student.o: student.c.o
-
+# target to build an object file
+student.o:
+	$(MAKE) -f CMakeFiles/Q2.dir/build.make CMakeFiles/Q2.dir/student.o
 .PHONY : student.o
 
-# target to build an object file
-student.c.o:
-	$(MAKE) -f CMakeFiles/Q2.dir/build.make CMakeFiles/Q2.dir/student.c.o
-.PHONY : student.c.o
-
-student.i: student.c.i
-
+# target to preprocess a source file
+student.i:
+	$(MAKE) -f CMakeFiles/Q2.dir/build.make CMakeFiles/Q2.dir/student.i
 .PHONY : student.i
 
-# target to preprocess a source file
-student.c.i:
-	$(MAKE) -f CMakeFiles/Q2.dir/build.make CMakeFiles/Q2.dir/student.c.i
-.PHONY : student.c.i
-
-student.s: student.c.s
-
+# target to generate assembly for a file
+student.s:
+	$(MAKE) -f CMakeFiles/Q2.dir/build.make CMakeFiles/Q2.dir/student.s
 .PHONY : student.s
 
-# target to generate assembly for a file
-student.c.s:
-	$(MAKE) -f CMakeFiles/Q2.dir/build.make CMakeFiles/Q2.dir/student.c.s
-.PHONY : student.c.s
-
-zone.o: zone.c.o
-
+# target to build an object file
+zone.o:
+	$(MAKE) -f CMakeFiles/Q2.dir/build.make CMakeFiles/Q2.dir/zone.o
 .PHONY : zone.o
 
-# target to build an object file
-zone.c.o:
-	$(MAKE) -f CMakeFiles/Q2.dir/build.make CMakeFiles/Q2.dir/zone.c.o
-.PHONY : zone.c.o
-
-zone.i: zone.c.i
-
+# target to preprocess a source file
+zone.i:
+	$(MAKE) -f CMakeFiles/Q2.dir/build.make CMakeFiles/Q2.dir/zone.i
 .PHONY : zone.i
 
-# target to preprocess a source file
-zone.c.i:
-	$(MAKE) -f CMakeFiles/Q2.dir/build.make CMakeFiles/Q2.dir/zone.c.i
-.PHONY : zone.c.i
-
-zone.s: zone.c.s
-
-.PHONY : zone.s
-
 # target to generate assembly for a file
-zone.c.s:
-	$(MAKE) -f CMakeFiles/Q2.dir/build.make CMakeFiles/Q2.dir/zone.c.s
-.PHONY : zone.c.s
+zone.s:
+	$(MAKE) -f CMakeFiles/Q2.dir/build.make CMakeFiles/Q2.dir/zone.s
+.PHONY : zone.s
 
 # Help Target
 help:

@@ -1,4 +1,26 @@
 /usr/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /mnt/e/OS/A4/Q2
--- Configuring done
--- Generating done
--- Build files have been written to: /mnt/e/OS/A4/Q2/cmake-build-debug
+-- Looking for pthread.h
+-- Looking for pthread.h - found
+-- Looking for pthread_create
+-- Looking for pthread_create - not found
+-- Check if compiler accepts -pthread
+-- Check if compiler accepts -pthread - yes
+-- Found Threads: TRUE  
+CMake Error at CMakeLists.txt:7 (target_link_libraries):
+  Cannot specify link libraries for target "my_app" which is not built by
+  this project.
+
+
+CMake Warning (dev) in CMakeLists.txt:
+  No cmake_minimum_required command is present.  A line of code such as
+
+    cmake_minimum_required(VERSION 3.10)
+
+  should be added at the top of the file.  The version specified may be lower
+  if you wish to support older CMake versions for this project.  For more
+  information run "cmake --help-policy CMP0000".
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+-- Configuring incomplete, errors occurred!
+See also "/mnt/e/OS/A4/Q2/cmake-build-debug/CMakeFiles/CMakeOutput.log".
+See also "/mnt/e/OS/A4/Q2/cmake-build-debug/CMakeFiles/CMakeError.log".

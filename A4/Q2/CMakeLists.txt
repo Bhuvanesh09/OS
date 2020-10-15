@@ -2,5 +2,5 @@
 project(Q2 C)
 
 set(CMAKE_C_STANDARD 11)
-
-add_executable(Q2 main.c cmake-build-debug/main.h main.h student.c student.h zone.c zone.h pharma.c pharma.h)
+set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -pthread")
+add_executable(Q2 main.c main.h student.c student.h zone.c zone.h pharma.c pharma.h)
