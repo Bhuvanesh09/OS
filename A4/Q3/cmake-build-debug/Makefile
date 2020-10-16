@@ -123,6 +123,33 @@ Q3/fast:
 	$(MAKE) -f CMakeFiles/Q3.dir/build.make CMakeFiles/Q3.dir/build
 .PHONY : Q3/fast
 
+acoustic.o: acoustic.c.o
+
+.PHONY : acoustic.o
+
+# target to build an object file
+acoustic.c.o:
+	$(MAKE) -f CMakeFiles/Q3.dir/build.make CMakeFiles/Q3.dir/acoustic.c.o
+.PHONY : acoustic.c.o
+
+acoustic.i: acoustic.c.i
+
+.PHONY : acoustic.i
+
+# target to preprocess a source file
+acoustic.c.i:
+	$(MAKE) -f CMakeFiles/Q3.dir/build.make CMakeFiles/Q3.dir/acoustic.c.i
+.PHONY : acoustic.c.i
+
+acoustic.s: acoustic.c.s
+
+.PHONY : acoustic.s
+
+# target to generate assembly for a file
+acoustic.c.s:
+	$(MAKE) -f CMakeFiles/Q3.dir/build.make CMakeFiles/Q3.dir/acoustic.c.s
+.PHONY : acoustic.c.s
+
 main.o: main.c.o
 
 .PHONY : main.o
@@ -159,6 +186,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... Q3"
 	@echo "... edit_cache"
+	@echo "... acoustic.o"
+	@echo "... acoustic.i"
+	@echo "... acoustic.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

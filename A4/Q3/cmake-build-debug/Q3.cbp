@@ -78,6 +78,12 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/mnt/e/OS/A4/Q3/acoustic.c">
+			<Option target="Q3"/>
+		</Unit>
+		<Unit filename="/mnt/e/OS/A4/Q3/acoustic.h">
+			<Option target="Q3"/>
+		</Unit>
 		<Unit filename="/mnt/e/OS/A4/Q3/main.c">
 			<Option target="Q3"/>
 		</Unit>

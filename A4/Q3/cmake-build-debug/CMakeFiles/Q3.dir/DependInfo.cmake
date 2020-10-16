@@ -4,6 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
+  "/mnt/e/OS/A4/Q3/acoustic.c" "/mnt/e/OS/A4/Q3/cmake-build-debug/CMakeFiles/Q3.dir/acoustic.c.o"
   "/mnt/e/OS/A4/Q3/main.c" "/mnt/e/OS/A4/Q3/cmake-build-debug/CMakeFiles/Q3.dir/main.c.o"
   )
 set(CMAKE_C_COMPILER_ID "GNU")

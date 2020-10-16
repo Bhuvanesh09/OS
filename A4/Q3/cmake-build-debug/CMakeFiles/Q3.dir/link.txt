@@ -1,1 +1,1 @@
-/usr/bin/cc -g   CMakeFiles/Q3.dir/main.c.o  -o Q3 
+/usr/bin/cc  -pthread -g   CMakeFiles/Q3.dir/main.c.o CMakeFiles/Q3.dir/acoustic.c.o  -o Q3 
