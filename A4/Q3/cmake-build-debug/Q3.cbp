@@ -96,6 +96,12 @@
 		<Unit filename="/mnt/e/OS/A4/Q3/main.h">
 			<Option target="Q3"/>
 		</Unit>
+		<Unit filename="/mnt/e/OS/A4/Q3/singer.c">
+			<Option target="Q3"/>
+		</Unit>
+		<Unit filename="/mnt/e/OS/A4/Q3/singer.h">
+			<Option target="Q3"/>
+		</Unit>
 		<Unit filename="/mnt/e/OS/A4/Q3/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>

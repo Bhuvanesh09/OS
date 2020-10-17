@@ -24,6 +24,7 @@ int main() {
         scanf("%s %c %d", people[i].name, &people[i].instrument, &people[i].arrivalTime);
         people[i].status = NOT_YET_ARRIVED;
         people[i].isSinger = people[i].instrument == 's' ? 1 : 0;
+        people[i].singerId = -1;
         people[i].performanceTime = randomCustom(t1, t2);
         numSingers += people[i].isSinger;
         maxTime = maxTime > people[i].arrivalTime ? maxTime : people[i].arrivalTime;
@@ -49,14 +50,15 @@ int main() {
                 printf(COL_LIGHT_GREEN "%s %c just arrived\n" COL_RESET, people[j].name, people[j].instrument);
                 people[j].status = WAITING_TO_PERFORM;
                 tempInst = people[j].instrument;
-                if(people[i].isSinger) {
+                if(people[j].isSinger) {
                     //singer thread
+                    pthread_create(&personThreadSinger[j],NULL, singerLive, &(people[j].id));
                 }
                 else {
                     if(tempInst == 'p' || tempInst == 'g' || tempInst == 'v'){
                         pthread_create(&personThreadAcoustic[j],NULL, acousticLive, &(people[j].id));
                     }
-                    else {// electric bro
+                    if(tempInst == 'p' || tempInst == 'g' || tempInst == 'b') {// electric bro
                         pthread_create(&personThreadElectric[j],NULL, electricLive, &(people[j].id));
                     }
                 }
@@ -70,6 +72,7 @@ int main() {
         tempInst = people[i].instrument;
         if(people[i].isSinger) {
             //singer thread
+
         }
         else {
             if(tempInst == 'p' || tempInst == 'g' || tempInst == 'v'){

@@ -204,6 +204,33 @@ main.c.s:
 	$(MAKE) -f CMakeFiles/Q3.dir/build.make CMakeFiles/Q3.dir/main.c.s
 .PHONY : main.c.s
 
+singer.o: singer.c.o
+
+.PHONY : singer.o
+
+# target to build an object file
+singer.c.o:
+	$(MAKE) -f CMakeFiles/Q3.dir/build.make CMakeFiles/Q3.dir/singer.c.o
+.PHONY : singer.c.o
+
+singer.i: singer.c.i
+
+.PHONY : singer.i
+
+# target to preprocess a source file
+singer.c.i:
+	$(MAKE) -f CMakeFiles/Q3.dir/build.make CMakeFiles/Q3.dir/singer.c.i
+.PHONY : singer.c.i
+
+singer.s: singer.c.s
+
+.PHONY : singer.s
+
+# target to generate assembly for a file
+singer.c.s:
+	$(MAKE) -f CMakeFiles/Q3.dir/build.make CMakeFiles/Q3.dir/singer.c.s
+.PHONY : singer.c.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -222,6 +249,9 @@ help:
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... singer.o"
+	@echo "... singer.i"
+	@echo "... singer.s"
 .PHONY : help
 
 

@@ -3,9 +3,25 @@
 
 CMakeFiles/Q3.dir/acoustic.c.o: ../acoustic.c
 CMakeFiles/Q3.dir/acoustic.c.o: ../acoustic.h
+CMakeFiles/Q3.dir/acoustic.c.o: ../electric.h
 CMakeFiles/Q3.dir/acoustic.c.o: ../main.h
+CMakeFiles/Q3.dir/acoustic.c.o: ../singer.h
+
+CMakeFiles/Q3.dir/electric.c.o: ../acoustic.h
+CMakeFiles/Q3.dir/electric.c.o: ../electric.c
+CMakeFiles/Q3.dir/electric.c.o: ../electric.h
+CMakeFiles/Q3.dir/electric.c.o: ../main.h
+CMakeFiles/Q3.dir/electric.c.o: ../singer.h
 
 CMakeFiles/Q3.dir/main.c.o: ../acoustic.h
+CMakeFiles/Q3.dir/main.c.o: ../electric.h
 CMakeFiles/Q3.dir/main.c.o: ../main.c
 CMakeFiles/Q3.dir/main.c.o: ../main.h
+CMakeFiles/Q3.dir/main.c.o: ../singer.h
+
+CMakeFiles/Q3.dir/singer.c.o: ../acoustic.h
+CMakeFiles/Q3.dir/singer.c.o: ../electric.h
+CMakeFiles/Q3.dir/singer.c.o: ../main.h
+CMakeFiles/Q3.dir/singer.c.o: ../singer.c
+CMakeFiles/Q3.dir/singer.c.o: ../singer.h
 

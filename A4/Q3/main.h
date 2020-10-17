@@ -9,9 +9,11 @@
 #include <stdlib.h>
 #include <sys/shm.h>
 #include <stdio.h>
+#include <unistd.h>
 #include <pthread.h>
 #include "acoustic.h"
 #include "electric.h"
+#include "singer.h"
 
 // state Kinds:
 enum states{ NOT_YET_ARRIVED, WAITING_TO_PERFORM, PERF_SOLO, PERF_WITH_OTHER, WAITING_FOR_TSHIRT, COLLECTING_TSHIRT, EXITED };
@@ -22,6 +24,7 @@ struct person{
     int arrivalTime;
     int performanceTime;
     int isSinger;
+    int singerId;
     enum states status;
 };
 #define COL_RESET "\x1B[0m"

@@ -7,6 +7,7 @@ set(CMAKE_DEPENDS_CHECK_C
   "/mnt/e/OS/A4/Q3/acoustic.c" "/mnt/e/OS/A4/Q3/cmake-build-debug/CMakeFiles/Q3.dir/acoustic.c.o"
   "/mnt/e/OS/A4/Q3/electric.c" "/mnt/e/OS/A4/Q3/cmake-build-debug/CMakeFiles/Q3.dir/electric.c.o"
   "/mnt/e/OS/A4/Q3/main.c" "/mnt/e/OS/A4/Q3/cmake-build-debug/CMakeFiles/Q3.dir/main.c.o"
+  "/mnt/e/OS/A4/Q3/singer.c" "/mnt/e/OS/A4/Q3/cmake-build-debug/CMakeFiles/Q3.dir/singer.c.o"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
 
