@@ -38,6 +38,7 @@ int main() {
     sem_init(&electricStages, NULL, e) ;
     sem_init(&singerQueue, NULL, a+e);
     sem_init(&tshirtQueue, NULL, c);
+    char tempInst ;
     for(int i=0; i < maxTime+1; i++){
         for(int j=0; j<k ; j++){
 
@@ -47,7 +48,18 @@ int main() {
                 //start threads here
                 printf(COL_LIGHT_GREEN "%s %c just arrived\n" COL_RESET, people[j].name, people[j].instrument);
                 people[j].status = WAITING_TO_PERFORM;
-                pthread_create(&personThreadAcoustic[j],NULL, acousticLive, &(people[j].id));
+                tempInst = people[j].instrument;
+                if(people[i].isSinger) {
+                    //singer thread
+                }
+                else {
+                    if(tempInst == 'p' || tempInst == 'g' || tempInst == 'v'){
+                        pthread_create(&personThreadAcoustic[j],NULL, acousticLive, &(people[j].id));
+                    }
+                    else {// electric bro
+                        pthread_create(&personThreadElectric[j],NULL, electricLive, &(people[j].id));
+                    }
+                }
             }
         }
         sleep(1);
@@ -55,8 +67,21 @@ int main() {
 
     //join all threads here;
     for(int i=0; i<k; i++){
-        pthread_join(personThreadAcoustic[i], NULL);
+        tempInst = people[i].instrument;
+        if(people[i].isSinger) {
+            //singer thread
+        }
+        else {
+            if(tempInst == 'p' || tempInst == 'g' || tempInst == 'v'){
+                pthread_join(personThreadAcoustic[i], NULL);
+            }
+            else {// electric bro
+                pthread_join(personThreadElectric[i], NULL);
+            }
+        }
     }
+
+    printf("FINISHED\n");
 
     return 0;
 }

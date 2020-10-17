@@ -11,6 +11,7 @@
 #include <stdio.h>
 #include <pthread.h>
 #include "acoustic.h"
+#include "electric.h"
 
 // state Kinds:
 enum states{ NOT_YET_ARRIVED, WAITING_TO_PERFORM, PERF_SOLO, PERF_WITH_OTHER, WAITING_FOR_TSHIRT, COLLECTING_TSHIRT, EXITED };

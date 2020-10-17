@@ -3,4 +3,4 @@ project(Q3 C)
 
 set(CMAKE_C_STANDARD 11)
 set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -pthread")
-add_executable(Q3 main.c main.h acoustic.c acoustic.h)
+add_executable(Q3 main.c main.h acoustic.c acoustic.h electric.c electric.h)

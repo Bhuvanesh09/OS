@@ -150,6 +150,33 @@ acoustic.c.s:
 	$(MAKE) -f CMakeFiles/Q3.dir/build.make CMakeFiles/Q3.dir/acoustic.c.s
 .PHONY : acoustic.c.s
 
+electric.o: electric.c.o
+
+.PHONY : electric.o
+
+# target to build an object file
+electric.c.o:
+	$(MAKE) -f CMakeFiles/Q3.dir/build.make CMakeFiles/Q3.dir/electric.c.o
+.PHONY : electric.c.o
+
+electric.i: electric.c.i
+
+.PHONY : electric.i
+
+# target to preprocess a source file
+electric.c.i:
+	$(MAKE) -f CMakeFiles/Q3.dir/build.make CMakeFiles/Q3.dir/electric.c.i
+.PHONY : electric.c.i
+
+electric.s: electric.c.s
+
+.PHONY : electric.s
+
+# target to generate assembly for a file
+electric.c.s:
+	$(MAKE) -f CMakeFiles/Q3.dir/build.make CMakeFiles/Q3.dir/electric.c.s
+.PHONY : electric.c.s
+
 main.o: main.c.o
 
 .PHONY : main.o
@@ -189,6 +216,9 @@ help:
 	@echo "... acoustic.o"
 	@echo "... acoustic.i"
 	@echo "... acoustic.s"
+	@echo "... electric.o"
+	@echo "... electric.i"
+	@echo "... electric.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
