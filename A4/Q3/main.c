@@ -13,9 +13,8 @@ int randomCustom(int l, int r) {
     return rand() % (r - l + 1) + l;
 }
 int main() {
+    srand(time(0));
     scanf("%d %d %d %d %d %d %d", &k, &a, &e, &c, &t1, &t2, &t);
-    waitTime.tv_nsec = 0;
-    waitTime.tv_sec = t;
     people = (struct person *) shareMem(sizeof(struct person) * k);
     int maxTime = 0, numSingers = 0;
     for(int i=0; i<k; i++){
@@ -53,6 +52,8 @@ int main() {
                 if(people[j].isSinger) {
                     //singer thread
                     pthread_create(&personThreadSinger[j],NULL, singerLive, &(people[j].id));
+                    pthread_create(&personThreadAcoustic[j],NULL, acousticLive, &(people[j].id));
+                    pthread_create(&personThreadElectric[j],NULL, electricLive, &(people[j].id));
                 }
                 else {
                     if(tempInst == 'p' || tempInst == 'g' || tempInst == 'v'){
@@ -73,6 +74,9 @@ int main() {
         if(people[i].isSinger) {
             //singer thread
 
+            pthread_join(personThreadSinger[i], NULL);
+            pthread_join(personThreadElectric[i], NULL);
+            pthread_join(personThreadAcoustic[i], NULL);
         }
         else {
             if(tempInst == 'p' || tempInst == 'g' || tempInst == 'v'){

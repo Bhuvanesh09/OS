@@ -45,7 +45,6 @@ struct person *people;
 pthread_mutex_t *personMutex;
 
 int k, a, e, c, t1, t2, t;
-struct timespec waitTime;
 
 int randomCustom(int l, int r);
 #endif //Q3_MAIN_H

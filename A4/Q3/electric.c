@@ -7,20 +7,34 @@
 #include <unistd.h>
 void *electricLive(void * input){
     int id = *(int *) input;
+    struct timespec waitTime;
+    timespec_get(&waitTime, TIMER_ABSTIME);
+    waitTime.tv_sec += t;
     int res = sem_timedwait(&electricStages,&waitTime);
-    if(res == -1 && errno == ETIMEDOUT && people[id].status == WAITING_TO_PERFORM){
-        printf(COL_MAGENTA "%s has ran out of patience and left. :(\n" COL_RESET, people[id].name);
-        people[id].status = EXITED;
-        return NULL;
+    int temp;
+//    printf("%lld.%.9ld", (long long)waitTime.tv_sec, waitTime.tv_nsec);
+    sem_getvalue(&acousticStages, &temp);
+//    if(res != -1) printf("%s decreased electric sema \n", people[id].name);
+    pthread_mutex_lock(&personMutex[id]);
+    if(res == -1 && errno == ETIMEDOUT ){
+        if( people[id].status == WAITING_TO_PERFORM) {
+            printf(COL_MAGENTA "%s has ran out of patience and left. sem  = %d :(\n" COL_RESET, people[id].name, temp);
+            people[id].status = EXITED;
+            pthread_mutex_unlock(&personMutex[id]);
+            return NULL;
+        }
+        else {
+            pthread_mutex_unlock(&personMutex[id]);
+            return NULL;
+        }
     }
 
-    pthread_mutex_lock(&personMutex[id]);
     if(people[id].status != WAITING_TO_PERFORM){
         sem_post(&electricStages);
+//        printf("%s increasing semaphore electric\n" , people[id].name);
         pthread_mutex_unlock(&personMutex[id]);
         return NULL;
     }
-
     printf(COL_ORANGE "%s performing %c at electric stage for %d seconds\n" COL_RESET, people[id].name, people[id].instrument, people[id].performanceTime);
     people[id].status = PERF_SOLO;
     pthread_mutex_unlock(&personMutex[id]);
