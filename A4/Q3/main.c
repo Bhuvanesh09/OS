@@ -82,7 +82,7 @@ int main() {
             if(tempInst == 'p' || tempInst == 'g' || tempInst == 'v'){
                 pthread_join(personThreadAcoustic[i], NULL);
             }
-            else {// electric bro
+            if(tempInst == 'p' || tempInst == 'g' || tempInst == 'b') {// electric bro
                 pthread_join(personThreadElectric[i], NULL);
             }
         }

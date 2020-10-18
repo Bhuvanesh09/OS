@@ -5,6 +5,7 @@
 #include "electric.h"
 #include <errno.h>
 #include <unistd.h>
+#include <string.h>
 void *electricLive(void * input){
     int id = *(int *) input;
     struct timespec waitTime;
@@ -18,7 +19,7 @@ void *electricLive(void * input){
     pthread_mutex_lock(&personMutex[id]);
     if(res == -1 && errno == ETIMEDOUT ){
         if( people[id].status == WAITING_TO_PERFORM) {
-            printf(COL_MAGENTA "%s has ran out of patience and left. sem  = %d :(\n" COL_RESET, people[id].name, temp);
+            printf(COL_MAGENTA "%s who plays %c has ran out of patience and left. sem  = %d :(\n" COL_RESET, people[id].name, people[id].instrument, temp);
             people[id].status = EXITED;
             pthread_mutex_unlock(&personMutex[id]);
             return NULL;
