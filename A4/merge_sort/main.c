@@ -33,6 +33,12 @@ void swapCust(int *a, int *b){
     *a ^= *b;
     return;
 }
+
+struct myClass {
+    int left;
+    int right;
+    int *arr;
+};
 void selectionSort(int *arr, int left, int right){
     int minIdx;
     for(int i=left; i < right; i++){
@@ -53,8 +59,6 @@ void printar(int *arr, int left, int right){
     printf("\n");
 }
 void merge(int * arr, int left, int right){
-//    printf("Entered: ");
-//    printar(arr, left, right);
     int middle = (left + right)/2;
     int *sortedArr = (int *) malloc(sizeof(int) * (right - left +10 ));
     int i = left, leftTrack, rightTrack;
@@ -137,7 +141,47 @@ void mergesort_parallel(int *arr, int left, int right){
     return;
 
 }
-void runSorts(long long int n){
+
+void * mergesortThreaded(void * input){
+    struct myClass *object = (struct myClass *) input;
+
+    int left = object->left;
+    int right = object->right;
+    int *arr = object->arr;
+
+
+    if(left == right) return NULL;
+
+    if(right - left <= 5) {
+        selectionSort(arr, left, right);
+        return NULL;
+    }
+
+    int middle = (left + right) / 2;
+
+    //for the left part:
+    struct myClass leftObject;
+    leftObject.left = left;
+    leftObject.right = middle;
+    leftObject.arr = arr;
+    pthread_t leftThread;
+    pthread_create(&leftThread, NULL, mergesortThreaded, &leftObject);
+
+    //for the right part
+    struct myClass rightObject;
+    rightObject.left = middle;
+    rightObject.right = right;
+    rightObject.arr = arr;
+    pthread_t  rightThread;
+    pthread_create(&rightThread, NULL, mergesortThreaded, &rightObject);
+
+    pthread_join(leftThread, NULL);
+    pthread_join(rightThread, NULL);
+
+    merge(arr, left, right);
+    return NULL;
+}
+void runSorts(int n){
 
     struct timespec ts;
 
@@ -146,9 +190,13 @@ void runSorts(long long int n){
     for(int i=0;i<n;i++) scanf("%d", arr+i);
 
     int brr[n+1];
-    for(int i=0;i<n;i++) brr[i] = arr[i];
+    int crr[n+1];
+    for(int i=0;i<n;i++){
+        crr[i] = arr[i];
+        brr[i] = arr[i];
+    }
 
-    printf("Running concurrent_quicksort for n = %lld\n", n);
+    printf("Running concurrent_mergesort for n = %lld\n", n);
     clock_gettime(CLOCK_MONOTONIC_RAW, &ts);
     long double st = ts.tv_nsec/(1e9)+ts.tv_sec;
 
@@ -163,28 +211,28 @@ void runSorts(long long int n){
     printf("time = %Lf\n", en - st);
     long double t1 = en-st;
 
-//    pthread_t tid;
-//    struct arg a;
-//    a.l = 0;
-//    a.r = n-1;
-//    a.arr = brr;
-//    printf("Running threaded_concurrent_quicksort for n = %lld\n", n);
-//    clock_gettime(CLOCK_MONOTONIC_RAW, &ts);
-//    st = ts.tv_nsec/(1e9)+ts.tv_sec;
+    pthread_t tid;
+    struct myClass a;
+    a.left = 0;
+    a.right = n;
+    a.arr = brr;
+    printf("Running threaded_concurrent_mergesort for n = %lld\n", n);
+    clock_gettime(CLOCK_MONOTONIC_RAW, &ts);
+    st = ts.tv_nsec/(1e9)+ts.tv_sec;
 
-//    //multithreaded mergesort
-//    pthread_create(&tid, NULL, threaded_quickSort, &a);
-//    pthread_join(tid, NULL);
-//    for(int i=0; i<n; i++){
-//        printf("%d ",a.arr[i]);
-//    }
-//    printf("\n");
-//    clock_gettime(CLOCK_MONOTONIC_RAW, &ts);
-//    en = ts.tv_nsec/(1e9)+ts.tv_sec;
-//    printf("time = %Lf\n", en - st);
-//    long double t2 = en-st;
+    //multithreaded mergesort
+    pthread_create(&tid, NULL, mergesortThreaded, &a);
+    pthread_join(tid, NULL);
+    for(int i=0; i<n; i++){
+        printf("%d ",a.arr[i]);
+    }
+    printf("\n");
+    clock_gettime(CLOCK_MONOTONIC_RAW, &ts);
+    en = ts.tv_nsec/(1e9)+ts.tv_sec;
+    printf("time = %Lf\n", en - st);
+    long double t2 = en-st;
 
-    printf("Running normal_quicksort for n = %lld\n", n);
+    printf("Running normal mergesort for n = %lld\n", n);
     clock_gettime(CLOCK_MONOTONIC_RAW, &ts);
     st = ts.tv_nsec/(1e9)+ts.tv_sec;
 
@@ -199,7 +247,11 @@ void runSorts(long long int n){
     printf("time = %Lf\n", en - st);
     long double t3 = en - st;
 
-    printf("normal_quicksort ran:\n\t[ %Lf ] times faster than concurrent_quicksort\n\t times faster than threaded_concurrent_quicksort\n\n\n", t1/t3  );
+    printf("normal_mergesort ran:\n\t[ %Lf ] times faster than concurrent_mergesort\n\t[ %Lf ] times faster than threaded_concurrent_mergesort\n\n\n", t1/t3, t2/t3  );
+    printf("Normal mergesort ran for : %Lf\n", t3);
+    printf("Multiprocess mergesort ran for : %Lf\n", t1);
+    printf("Multithreaded mergesort ran for : %Lf\n", t2);
+
     shmdt(arr);
     return;
 }

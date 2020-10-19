@@ -1,1 +1,4 @@
-CMake executable is incorrect Configure
+/usr/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /mnt/e/OS/A4/merge_sort
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /mnt/e/OS/A4/merge_sort/cmake-build-debug
