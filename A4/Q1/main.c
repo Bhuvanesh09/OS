@@ -61,9 +61,9 @@ void printar(int *arr, int left, int right){
 void merge(int * arr, int left, int right){
     int middle = (left + right)/2;
     int *sortedArr = (int *) malloc(sizeof(int) * (right - left +10 ));
-    int i = left, leftTrack, rightTrack;
+    int i = 0, leftTrack, rightTrack;
 
-    for(leftTrack=0, rightTrack=middle; leftTrack != middle && rightTrack != right ; i++){
+    for(leftTrack=left, rightTrack=middle; leftTrack != middle && rightTrack != right ; i++){
        if(arr[leftTrack] <= arr[rightTrack]) {
            sortedArr[i] = arr[leftTrack];
            leftTrack++;
@@ -80,7 +80,7 @@ void merge(int * arr, int left, int right){
         sortedArr[i] = arr[rightTrack];
     }
     for(int i=0, j=left; j<right; i++, j++){
-//        printf("%d ", sortedArr[i]);
+    //    printf("%d ", sortedArr[i]);
         arr[j] = sortedArr[i];
     }
 //    printf("merged ^ \n");
@@ -97,7 +97,9 @@ void mergesort(int *arr, int left , int right){
 
     int middle = (left + right) / 2;
     mergesort(arr, left, middle);
+    // printar(arr, left, middle);
     mergesort(arr, middle, right);
+    // printar(arr, middle, right);
 
     merge(arr, left, right);
     return;
@@ -237,7 +239,7 @@ void runSorts(int n){
     st = ts.tv_nsec/(1e9)+ts.tv_sec;
 
     // normal mergesort
-    mergesort(brr, 0, n);
+    mergesort(crr, 0, n);
     for(int i=0; i<n; i++){
         printf("%d ",brr[i]);
     }
