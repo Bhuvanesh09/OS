@@ -32,11 +32,11 @@ int tryForSlot(int studId){
 void *studentLife(void * input){
     int studId = *((int *) input);
     int timeArrival = randomCustom(1, 10);
-    delay(timeArrival);
+    sleep(timeArrival);
     printf(COL_RED "Student %d has arrived at the gate.\n" COL_RESET, studId);
     printf(COL_RED "Student %d is waiting to be alloted a slot in any of the vaccination zones.\n" COL_RESET, studId);
     while(studentArray[studId]->progressState == CANDIDATE || studentArray[studId]->progressState == WAITING){
         if (studentArray[studId]->progressState == CANDIDATE) tryForSlot(studId);
-        delay(2);
+        sleep(2);
     }
 }

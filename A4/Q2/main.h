@@ -67,7 +67,6 @@ struct student **studentArray;
 struct zone **zonesArray;
 struct pharma **pharmaArray;
 
-void delay(int time);
 int min(int a, int b);
 int randomCustom(int l, int r);
 #endif //Q2_MAIN_H

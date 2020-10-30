@@ -39,7 +39,7 @@ int performTest(int companyId,int zoneId, int studId){
 void * zoneLive(void * input){
     int zoneId = *(int *) input;
     while(studentsLeft > 0){
-        delay(2);
+        sleep(2);
         pthread_mutex_lock(&zoneMutexes[zoneId]);
 //        printf(COL_CYAN "zone live %d enter\n" COL_RESET, zoneId);
 
@@ -61,7 +61,7 @@ void * zoneLive(void * input){
                 continue;
             }
             pthread_mutex_lock(&totalStuds);
-            printf("Students left : %d , Decoy Left : %d\n", studentsLeft, decoyLeft);
+//            printf("Students left : %d , Decoy Left : %d\n", studentsLeft, decoyLeft);
             zonesArray[zoneId]->numSlots = min(8, min(decoyLeft, zonesArray[zoneId]->vaccinesLeft));
             zonesArray[zoneId]->vaccinesLeft -= zonesArray[zoneId]->numSlots;
             zonesArray[zoneId]->studentIds = (int *) malloc(sizeof(int) * zonesArray[zoneId]->numSlots);

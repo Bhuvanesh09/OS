@@ -26,7 +26,7 @@ int dispatchVaccines(int companyId){
 void * pharmaLive(void * input){
     int companyId = *(int *)  input;
     while(studentsLeft > 0){
-        delay(2);
+        sleep(2);
         if(pharmaArray[companyId]->availBatches == 0){
             //No batches left so now I have to check if I need to produce more or not (by checking if all my vaccines are consumed)
             int flag = 1;
@@ -37,7 +37,7 @@ void * pharmaLive(void * input){
             if(flag){
                 printf(COL_GREEN "All the vaccines prepared by Pharmaceutical Company %d are emptied. Resuming production now.\n" COL_RESET, companyId);
                 printf(COL_GREEN "Pharmaceutical Company %d is preparing %d batches with %d vaccines each which have success probability %f\n" COL_RESET, companyId,pharmaArray[companyId]->numBatchesProduced,pharmaArray[companyId]->batchStrength,  pharmaArray[companyId]->probSuccess);
-                delay(pharmaArray[companyId]->productionTime);
+                sleep(pharmaArray[companyId]->productionTime);
                 pharmaArray[companyId]->availBatches = pharmaArray[companyId]->numBatchesProduced;
                 printf(COL_GREEN "Pharmaceutical Company %d has prepared %d batches of vaccines which have success probability %f. Waiting for all the vaccines to be used to resume production\n" COL_RESET, companyId, pharmaArray[companyId]->numBatchesProduced, pharmaArray[companyId]->probSuccess);
             }

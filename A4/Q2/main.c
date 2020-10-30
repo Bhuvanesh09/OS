@@ -11,10 +11,7 @@ void *shareMem(size_t size) {
     // attach the address space of shared memory to myself (callee)
     return (void *)shmat(shm_id, NULL, 0);
 }
-void delay(int time) {
-    const clock_t start_time = clock();
-    while (clock() - start_time < time * CLOCKS_PER_SEC);
-}
+
 int randomCustom(int l, int r) {
     return rand() % (r - l + 1) + l;
 }
