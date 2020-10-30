@@ -112,6 +112,12 @@ found:
   memset(p->context, 0, sizeof *p->context);
   p->context->eip = (uint)forkret;
 
+  //Addition for assignment
+  //Initializing start, end and total time variables"
+  p->ctime = ticks;
+  p->rtime = 0;
+  p->etime = 0;
+
   return p;
 }
 
@@ -242,6 +248,9 @@ exit(void)
     }
   }
 
+  //Addition for assignment
+  curproc -> etime = ticks;
+  // Changes ended
   begin_op();
   iput(curproc->cwd);
   end_op();
@@ -310,6 +319,60 @@ wait(void)
     sleep(curproc, &ptable.lock);  //DOC: wait-sleep
   }
 }
+
+// Wait for a child process to exit and return its pid.
+// Return -1 if this process has no children.
+int
+waitx(int *wtime, int* rtime)
+{
+    //initiating them
+    *wtime = 0;
+    *rtime = 0;
+
+    struct proc *p;
+    int havekids, pid;
+    struct proc *curproc = myproc();
+
+    acquire(&ptable.lock);
+    for(;;){
+        // Scan through table looking for exited children.
+        havekids = 0;
+        for(p = ptable.proc; p < &ptable.proc[NPROC]; p++){
+            if(p->parent != curproc)
+                continue;
+            havekids = 1;
+            if(p->state == ZOMBIE){
+                // Found one.
+                pid = p->pid;
+                kfree(p->kstack);
+                p->kstack = 0;
+                freevm(p->pgdir);
+                p->pid = 0;
+                p->parent = 0;
+                p->name[0] = 0;
+                p->killed = 0;
+                p->state = UNUSED;
+
+                *rtime = p->rtime;
+                *wtime = ticks - p->ctime;
+                *wtime -= p->rtime;
+
+                release(&ptable.lock);
+                return pid;
+            }
+        }
+
+        // No point waiting if we don't have any children.
+        if(!havekids || curproc->killed){
+            release(&ptable.lock);
+            return -1;
+        }
+        p->etime = ticks;
+        // Wait for children to exit.  (See wakeup1 call in proc_exit.)
+        sleep(curproc, &ptable.lock);  //DOC: wait-sleep
+    }
+}
+
 
 //PAGEBREAK: 42
 // Per-CPU process scheduler.
