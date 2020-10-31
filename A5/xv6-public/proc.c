@@ -373,6 +373,34 @@ waitx(int *wtime, int* rtime)
     }
 }
 
+int
+pscall(void){
+    static char *states[] = {
+            [UNUSED]    "unused",
+            [EMBRYO]    "embryo",
+            [SLEEPING]  "sleep ",
+            [RUNNABLE]  "runble",
+            [RUNNING]   "run   ",
+            [ZOMBIE]    "zombie"
+    };
+    int i;
+    struct proc *p;
+    char *state;
+    uint pc[10];
+    cprintf("%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\n","PID", "Priority", "State", "r_time", "w_time","n_run", "cur_q", "q0", "q1", "q2", "q3", "q4");
+    for(p = ptable.proc; p < &ptable.proc[NPROC]; p++){
+        if(p->state == UNUSED)
+            continue;
+        if(p->state >= 0 && p->state < NELEM(states) && states[p->state])
+            state = states[p->state];
+        else
+            state = "???";
+
+        cprintf("%d\t%d\t%s\t%d\t%d\t%d\t%d\t%d\t%d\t%d\t%d\t%d\t", p->pid, p->pr, state, p->rtime, ticks - p->ctime - p->rtime, p->nRun, p->curQ, p->qTicks[0],p->qTicks[1],p->qTicks[2],p->qTicks[3],p->qTicks[4]);
+        cprintf("\n");
+    }
+    return 0;
+}
 
 //PAGEBREAK: 42
 // Per-CPU process scheduler.

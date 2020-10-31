@@ -35,6 +35,12 @@ sys_waitx(void)
 }
 
 int
+sys_pscall(void)
+{
+    return pscall();
+}
+
+int
 sys_kill(void)
 {
   int pid;

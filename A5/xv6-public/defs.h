@@ -120,6 +120,7 @@ void            userinit(void);
 int             wait(void);
 // For the Assignment :
 int             waitx(int *wtime, int* rtime);
+int             pscall(void);
 void            wakeup(void*);
 void            yield(void);
 

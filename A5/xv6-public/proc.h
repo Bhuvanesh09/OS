@@ -51,6 +51,8 @@ struct proc {
   char name[16];               // Process name (debugging)
 
   //Addition for the assignment:
+  int pr, nRun, curQ, qTicks[5]; // For pscall syscall
+
   int ctime; //Creation Time
   int rtime; //Total time
   int etime; //End time
