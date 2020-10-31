@@ -383,10 +383,8 @@ pscall(void){
             [RUNNING]   "run   ",
             [ZOMBIE]    "zombie"
     };
-    int i;
     struct proc *p;
     char *state;
-    uint pc[10];
     cprintf("%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\n","PID", "Priority", "State", "r_time", "w_time","n_run", "cur_q", "q0", "q1", "q2", "q3", "q4");
     for(p = ptable.proc; p < &ptable.proc[NPROC]; p++){
         if(p->state == UNUSED)
