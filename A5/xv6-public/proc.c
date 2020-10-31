@@ -420,7 +420,7 @@ scheduler(void)
     sti();
     // Loop over process table looking for process to run.
     acquire(&ptable.lock);
-    for(p = ptable.proc; p < &ptable.proc[NPROC]; p++){
+    for(struct proc *p = ptable.proc; p < &ptable.proc[NPROC]; p++){
       if(p->state != RUNNABLE)
         continue;
 
@@ -449,7 +449,7 @@ scheduler(void)
     // Loop over process table looking for process to run.
     struct proc *chosenProc = 0;
     acquire(&ptable.lock);
-        for(p = ptable.proc; p < &ptable.proc[NPROC]; p++){
+        for(struct proc *p = ptable.proc; p < &ptable.proc[NPROC]; p++){
           if(p->state != RUNNABLE)
             continue;
 
@@ -458,12 +458,15 @@ scheduler(void)
           }else chosenProc = p;
 
         }
-      c->proc = chosenProc;
-      switchuvm(chosenProc);
-      chosenProc->state = RUNNING;
 
-      swtch(&(c->scheduler), chosenProc->context);
-      switchkvm();
+        if(chosenProc) {
+            c->proc = chosenProc;
+            switchuvm(chosenProc);
+            chosenProc->state = RUNNING;
+
+            swtch(&(c->scheduler), chosenProc->context);
+            switchkvm();
+        }
 
       // Process is done running for now.
       // It should have changed its p->state before coming back.
