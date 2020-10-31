@@ -119,7 +119,7 @@ void            sleep(void*, struct spinlock*);
 void            userinit(void);
 int             wait(void);
 // For the Assignment :
-int             waitx(void);
+int             waitx(int *wtime, int* rtime);
 void            wakeup(void*);
 void            yield(void);
 
