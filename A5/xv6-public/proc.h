@@ -1,4 +1,6 @@
-#define FCFS
+//#define FCFS
+#define PBS
+int preemptOrNotPBS(int pr);
 // Per-CPU state
 struct cpu {
   uchar apicid;                // Local APIC ID
@@ -57,6 +59,7 @@ struct proc {
   int ctime; //Creation Time
   int rtime; //Total time
   int etime; //End time
+  int lastTime;
 };
 
 // Process memory is laid out contiguously, low addresses first:

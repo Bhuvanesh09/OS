@@ -6,7 +6,7 @@
 #include "x86.h"
 #include "proc.h"
 #include "spinlock.h"
-
+#define DEF_PRIORITY 60
 struct {
   struct spinlock lock;
   struct proc proc[NPROC];
@@ -118,6 +118,8 @@ found:
   p->rtime = 0;
   p->etime = 0;
 
+  p->nRun = 0;
+  p->pr = DEF_PRIORITY;
   return p;
 }
 
@@ -217,7 +219,7 @@ fork(void)
   safestrcpy(np->name, curproc->name, sizeof(curproc->name));
 
   pid = np->pid;
-
+  np->pr = DEF_PRIORITY;
   acquire(&ptable.lock);
 
   np->state = RUNNABLE;
@@ -476,6 +478,41 @@ scheduler(void)
   }
 #endif
 
+#ifdef PBS
+    for(;;){
+        // Enable interrupts on this processor.
+        sti();
+        // Loop over process table looking for process to run.
+        struct proc *chosenProc = 0;
+        acquire(&ptable.lock);
+        for(struct proc *p = ptable.proc; p < &ptable.proc[NPROC]; p++){
+            if(p->state != RUNNABLE)
+                continue;
+
+            if(chosenProc){
+                if(p->pr < chosenProc->pr) chosenProc = p;
+                if(p->pr == chosenProc->pr && p->lastTime < chosenProc->lastTime) chosenProc = p;
+            }else chosenProc = p;
+
+        }
+
+        if(chosenProc) {
+            c->proc = chosenProc;
+            switchuvm(chosenProc);
+            chosenProc->state = RUNNING;
+            chosenProc->lastTime = ticks;
+            chosenProc->nRun += 1;
+            swtch(&(c->scheduler), chosenProc->context);
+            switchkvm();
+        }
+
+        // Process is done running for now.
+        // It should have changed its p->state before coming back.
+        c->proc = 0;
+
+        release(&ptable.lock);
+    }
+#endif
     for(;;){}
 }
 
@@ -655,4 +692,13 @@ procdump(void)
     }
     cprintf("\n");
   }
+}
+int preemptOrNotPBS(int pr){
+   for(struct proc *p = ptable.proc;p < &ptable.proc[NPROC] ; p++) {
+        if(p->state == RUNNABLE && p->pr <= pr){
+            return 1;
+        }
+   }
+
+   return 0;
 }
