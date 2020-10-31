@@ -1,6 +1,6 @@
 //#define FCFS
-//#define PBS
-#define MLFQ
+#define PBS
+//#define MLFQ
 int preemptOrNotPBS(int pr);
 // Per-CPU state
 struct cpu {

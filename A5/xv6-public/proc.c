@@ -409,7 +409,10 @@ setPriority(int newPr, int pid){
     acquire(&ptable.lock);
         for(struct proc *p = ptable.proc; p < &ptable.proc[NPROC]; p++){
             oldValue = p->pr;
-            if(p->pid == pid) p->pr = newPr;
+            if(p->pid == pid) {
+                oldValue = p->pr;
+                p->pr = newPr;
+            }
         }
     release(&ptable.lock);
     return oldValue;
