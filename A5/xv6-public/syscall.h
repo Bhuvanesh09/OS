@@ -22,3 +22,4 @@
 #define SYS_close  21
 #define SYS_waitx  22
 #define SYS_pscall 23
+#define SYS_setPriority 24

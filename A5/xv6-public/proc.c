@@ -403,6 +403,18 @@ pscall(void){
     return 0;
 }
 
+int
+setPriority(int newPr, int pid){
+    int oldValue;
+    acquire(&ptable.lock);
+        for(struct proc *p = ptable.proc; p < &ptable.proc[NPROC]; p++){
+            oldValue = p->pr;
+            if(p->pid == pid) p->pr = newPr;
+        }
+    release(&ptable.lock);
+    return oldValue;
+}
+
 //PAGEBREAK: 42
 // Per-CPU process scheduler.
 // Each CPU calls scheduler() after setting itself up.

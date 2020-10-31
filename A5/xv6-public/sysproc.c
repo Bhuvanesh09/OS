@@ -34,6 +34,12 @@ sys_waitx(void)
     return waitx(wtime, rtime);
 }
 
+int sys_setPriority(void)
+{
+    int newPr, pid;
+    if (argint(0, &newPr) < 0 || argint(1, &pid) < 0) return -1;
+    return setPriority(newPr, pid);
+}
 int
 sys_pscall(void)
 {
