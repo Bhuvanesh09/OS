@@ -411,7 +411,6 @@ pscall(void){
 void
 scheduler(void)
 {
-  struct proc *p;
   struct cpu *c = mycpu();
   c->proc = 0;
 
@@ -450,15 +449,15 @@ scheduler(void)
     // Loop over process table looking for process to run.
     struct proc *chosenProc = 0;
     acquire(&ptable.lock);
-    for(p = ptable.proc; p < &ptable.proc[NPROC]; p++){
-      if(p->state != RUNNABLE)
-        continue;
+        for(p = ptable.proc; p < &ptable.proc[NPROC]; p++){
+          if(p->state != RUNNABLE)
+            continue;
 
-      if(chosenProc){
-          if(p->ctime < chosenProc->ctime) chosenProc = p;
-      }else chosenProc = p;
+          if(chosenProc){
+              if(p->ctime < chosenProc->ctime) chosenProc = p;
+          }else chosenProc = p;
 
-    }
+        }
       c->proc = chosenProc;
       switchuvm(chosenProc);
       chosenProc->state = RUNNING;
@@ -473,6 +472,8 @@ scheduler(void)
     release(&ptable.lock);
   }
 #endif
+
+    for(;;){}
 }
 
 // Enter scheduler.  Must hold only ptable.lock
