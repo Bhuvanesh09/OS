@@ -1,5 +1,6 @@
 //#define FCFS
-#define PBS
+//#define PBS
+#define MLFQ
 int preemptOrNotPBS(int pr);
 // Per-CPU state
 struct cpu {
@@ -54,12 +55,13 @@ struct proc {
   char name[16];               // Process name (debugging)
 
   //Addition for the assignment:
-  int pr, nRun, curQ, qTicks[5]; // For pscall syscall
+  int pr, nRun, qTicks[5]; // For pscall syscall
 
   int ctime; //Creation Time
   int rtime; //Total time
   int etime; //End time
   int lastTime;
+  int qLevel;
 };
 
 // Process memory is laid out contiguously, low addresses first:

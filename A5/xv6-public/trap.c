@@ -53,8 +53,10 @@ trap(struct trapframe *tf)
       ticks++;
       wakeup(&ticks);
       release(&tickslock);
-      if(myproc() && myproc()->state == RUNNING)
+      if(myproc() && myproc()->state == RUNNING){
         myproc()->rtime += 1;
+        myproc()->qTicks[myproc()->qLevel] += 1;
+      }
     }
     lapiceoi();
     break;
@@ -116,6 +118,14 @@ trap(struct trapframe *tf)
 #endif
 #ifdef FCFS
     // pass
+#endif
+
+#ifdef MLFQ
+    if(myproc() && myproc()->state == RUNNING &&
+       tf->trapno == T_IRQ0+IRQ_TIMER && (ticks - myproc()->lastTime > (1 << myproc()->qLevel))) {
+        myproc()->qLevel = myproc()->qLevel < 4 ? myproc()->qLevel+1 : myproc()->qLevel;
+        yield();
+    }
 #endif
 
   // Check if the process has been killed since we yielded

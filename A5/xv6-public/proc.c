@@ -7,6 +7,7 @@
 #include "proc.h"
 #include "spinlock.h"
 #define DEF_PRIORITY 60
+#define AGE_LIMIT 100
 struct {
   struct spinlock lock;
   struct proc proc[NPROC];
@@ -117,9 +118,9 @@ found:
   p->ctime = ticks;
   p->rtime = 0;
   p->etime = 0;
-
   p->nRun = 0;
   p->pr = DEF_PRIORITY;
+  p->qLevel = 0;
   return p;
 }
 
@@ -387,7 +388,7 @@ pscall(void){
     };
     struct proc *p;
     char *state;
-    cprintf("%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\n","PID", "Priority", "State", "r_time", "w_time","n_run", "cur_q", "q0", "q1", "q2", "q3", "q4");
+    cprintf("%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\n","PID", "Name", "Priority", "State", "r_time", "w_time","n_run", "cur_q", "q0", "q1", "q2", "q3", "q4");
     for(p = ptable.proc; p < &ptable.proc[NPROC]; p++){
         if(p->state == UNUSED)
             continue;
@@ -396,7 +397,7 @@ pscall(void){
         else
             state = "???";
 
-        cprintf("%d\t%d\t%s\t%d\t%d\t%d\t%d\t%d\t%d\t%d\t%d\t%d\t", p->pid, p->pr, state, p->rtime, ticks - p->ctime - p->rtime, p->nRun, p->curQ, p->qTicks[0],p->qTicks[1],p->qTicks[2],p->qTicks[3],p->qTicks[4]);
+        cprintf("%d\t%s\t%d\t\t%s\t%d\t%d\t%d\t%d\t%d\t%d\t%d\t%d\t%d\t", p->pid, p->name,p->pr, state, p->rtime, ticks - p->ctime - p->rtime, p->nRun, p->qLevel, p->qTicks[0],p->qTicks[1],p->qTicks[2],p->qTicks[3],p->qTicks[4]);
         cprintf("\n");
     }
     return 0;
@@ -492,6 +493,48 @@ scheduler(void)
             if(chosenProc){
                 if(p->pr < chosenProc->pr) chosenProc = p;
                 if(p->pr == chosenProc->pr && p->lastTime < chosenProc->lastTime) chosenProc = p;
+            }else chosenProc = p;
+
+        }
+
+        if(chosenProc) {
+            c->proc = chosenProc;
+            switchuvm(chosenProc);
+            chosenProc->state = RUNNING;
+            chosenProc->lastTime = ticks;
+            chosenProc->nRun += 1;
+            swtch(&(c->scheduler), chosenProc->context);
+            switchkvm();
+        }
+
+        // Process is done running for now.
+        // It should have changed its p->state before coming back.
+        c->proc = 0;
+
+        release(&ptable.lock);
+    }
+#endif
+#ifdef MLFQ
+    for(;;){
+        // Enable interrupts on this processor.
+        sti();
+        // Loop over process table looking for process to run.
+        struct proc *chosenProc = 0;
+        acquire(&ptable.lock);
+        for(struct proc *p = ptable.proc; p < &ptable.proc[NPROC]; p++){
+            if(p->state != RUNNABLE)
+                continue;
+            if(p->qLevel != 0 && ticks - p->lastTime > AGE_LIMIT) {
+                p->lastTime = ticks;
+                p->qLevel -= 1;
+            }
+        }
+        for(struct proc *p = ptable.proc; p < &ptable.proc[NPROC]; p++){
+            if(p->state != RUNNABLE)
+                continue;
+            if(chosenProc){
+                if(p->qLevel < chosenProc->qLevel) chosenProc = p;
+                if(p->qLevel == chosenProc->qLevel && p->lastTime < chosenProc->lastTime) chosenProc = p;
             }else chosenProc = p;
 
         }
