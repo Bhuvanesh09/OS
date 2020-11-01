@@ -121,7 +121,7 @@ int             wait(void);
 // For the Assignment :
 int             waitx(int *wtime, int* rtime);
 int             setPriority(int newPr, int pid);
-int             pscall(void);
+void            pscall(void);
 void            wakeup(void*);
 void            yield(void);
 

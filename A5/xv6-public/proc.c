@@ -116,7 +116,7 @@ found:
   //Addition for assignment
   //Initializing start, end and total time variables"
   p->ctime = ticks;
-  p->rtime = 0;
+  p->rtime = 1;
   p->etime = 0;
   p->nRun = 0;
   p->pr = DEF_PRIORITY;
@@ -368,7 +368,7 @@ waitx(int *wtime, int* rtime)
                 p->state = UNUSED;
 
                 *rtime = p->rtime;
-                *wtime = ticks - p->ctime;
+                *wtime = ticks - p->ctime + 1;
                 *wtime -= p->rtime;
 
                 release(&ptable.lock);
@@ -387,7 +387,7 @@ waitx(int *wtime, int* rtime)
     }
 }
 
-int
+void
 pscall(void){
     static char *states[] = {
             [UNUSED]    "unused",
@@ -411,15 +411,13 @@ pscall(void){
         cprintf("%d\t%s\t%d\t\t%s\t%d\t%d\t%d\t%d\t%d\t%d\t%d\t%d\t%d\t", p->pid, p->name,p->pr, state, p->rtime, ticks - p->ctime - p->rtime, p->nRun, p->qLevel, p->qTicks[0],p->qTicks[1],p->qTicks[2],p->qTicks[3],p->qTicks[4]);
         cprintf("\n");
     }
-    return 0;
 }
 
 int
 setPriority(int newPr, int pid){
-    int oldValue;
+    int oldValue = 0;
     acquire(&ptable.lock);
         for(struct proc *p = ptable.proc; p < &ptable.proc[NPROC]; p++){
-            oldValue = p->pr;
             if(p->pid == pid) {
                 oldValue = p->pr;
                 p->pr = newPr;
@@ -462,7 +460,7 @@ scheduler(void)
 
       swtch(&(c->scheduler), p->context);
       switchkvm();
-
+      p->nRun += 1;
       // Process is done running for now.
       // It should have changed its p->state before coming back.
       c->proc = 0;
@@ -492,7 +490,7 @@ scheduler(void)
             c->proc = chosenProc;
             switchuvm(chosenProc);
             chosenProc->state = RUNNING;
-
+            chosenProc->nRun += 1;
             swtch(&(c->scheduler), chosenProc->context);
             switchkvm();
         }

@@ -5,6 +5,7 @@
 #include "types.h"
 #include "user.h"
 
-int main(){
-   return pscall();
+int main(int argc, char *argv[]){
+    pscall();
+    exit();
 }

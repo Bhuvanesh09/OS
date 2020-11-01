@@ -40,10 +40,10 @@ int sys_setPriority(void)
     if (argint(0, &newPr) < 0 || argint(1, &pid) < 0) return -1;
     return setPriority(newPr, pid);
 }
-int
+void
 sys_pscall(void)
 {
-    return pscall();
+    pscall();
 }
 
 int

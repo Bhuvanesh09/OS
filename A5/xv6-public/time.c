@@ -14,5 +14,5 @@ int main(int argc, char * argv[]){
 
         printf(1, "\nWaiting time : %d and Running Time: %d . \n", wtime, rtime);
     }
-    return 0;
+    exit();
 }
