@@ -7,7 +7,7 @@
 #include "proc.h"
 #include "spinlock.h"
 #define DEF_PRIORITY 60
-#define AGE_LIMIT 100
+#define AGE_LIMIT 12
 struct {
   struct spinlock lock;
   struct proc proc[NPROC];
@@ -408,7 +408,7 @@ pscall(void){
         else
             state = "???";
 
-        cprintf("%d\t%s\t%d\t\t%s\t%d\t%d\t%d\t%d\t%d\t%d\t%d\t%d\t%d\t", p->pid, p->name,p->pr, state, p->rtime, ticks - p->ctime - p->rtime, p->nRun, p->qLevel, p->qTicks[0],p->qTicks[1],p->qTicks[2],p->qTicks[3],p->qTicks[4]);
+        cprintf("%d\t%s\t%d\t\t%s\t%d\t%d\t%d\t%d\t%d\t%d\t%d\t%d\t%d\t", p->pid, p->name,p->pr, state, p->rtime, ticks - p->lastTime, p->nRun, p->qLevel, p->qTicks[0],p->qTicks[1],p->qTicks[2],p->qTicks[3],p->qTicks[4]);
         cprintf("\n");
     }
 }
@@ -455,9 +455,9 @@ scheduler(void)
       // to release ptable.lock and then reacquire it
       // before jumping back to us.
       c->proc = p;
-      switchuvm(p);
       p->state = RUNNING;
-
+      switchuvm(p);
+      p->lastTime = ticks;
       swtch(&(c->scheduler), p->context);
       switchkvm();
       p->nRun += 1;
@@ -490,6 +490,7 @@ scheduler(void)
             c->proc = chosenProc;
             switchuvm(chosenProc);
             chosenProc->state = RUNNING;
+            chosenProc->lastTime = ticks;
             chosenProc->nRun += 1;
             swtch(&(c->scheduler), chosenProc->context);
             switchkvm();
@@ -564,6 +565,7 @@ scheduler(void)
         }
 
         if(chosenProc) {
+//            cprintf("%d, %d, %d\n", chosenProc->pid, ticks, chosenProc->qLevel);
             c->proc = chosenProc;
             switchuvm(chosenProc);
             chosenProc->state = RUNNING;
