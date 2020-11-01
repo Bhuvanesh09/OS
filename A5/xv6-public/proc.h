@@ -1,5 +1,5 @@
 //#define FCFS
-#define PBS
+//#define PBS
 //#define MLFQ
 int preemptOrNotPBS(int pr);
 // Per-CPU state
