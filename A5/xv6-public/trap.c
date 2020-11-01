@@ -55,6 +55,7 @@ trap(struct trapframe *tf)
       release(&tickslock);
       if(myproc() && myproc()->state == RUNNING){
         myproc()->rtime += 1;
+//        cprintf("For %s increased rtime\n", myproc()->name);
         myproc()->qTicks[myproc()->qLevel] += 1;
       }
     }

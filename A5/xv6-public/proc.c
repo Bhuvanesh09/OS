@@ -121,6 +121,7 @@ found:
   p->nRun = 0;
   p->pr = DEF_PRIORITY;
   p->qLevel = 0;
+  for(int temp=0;temp<5;temp++) p->qTicks[temp] = 0;
   return p;
 }
 
@@ -329,9 +330,19 @@ int
 waitx(int *wtime, int* rtime)
 {
     //initiating them
-    *wtime = 0;
-    *rtime = 0;
 
+#ifdef DEFAULT
+    cprintf("Using Default\n");
+#endif
+#ifdef FCFS
+    cprintf("Using FCFS\n");
+#endif
+#ifdef PBS
+    cprintf("Using PBS\n");
+#endif
+#ifdef MLFQ
+    cprintf("Using MLFQ\n");
+#endif
     struct proc *p;
     int havekids, pid;
     struct proc *curproc = myproc();
